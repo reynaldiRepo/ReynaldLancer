@@ -12,15 +12,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginBottom="72dp">
+        android:layout_marginBottom="72dp"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/toolbarPlace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp">
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
 
             <ImageView
                 android:id="@+id/home_logo"
@@ -78,8 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:fillViewport="true"
-            >
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -405,30 +404,29 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
                             android:layout_marginLeft="12dp"
                             android:gravity="center"
                             android:text="Tugas Terbaru"
                             android:textColor="@color/colorAccent"
                             android:textSize="16dp"
                             android:textStyle="bold"
-                            android:layout_alignParentStart="true"
 
                             />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="6dp"
                             android:background="@drawable/roundwithstroke"
                             android:text="Lihat Lainnya"
                             android:textColor="@color/colorAccent"
                             android:textSize="8dp"
-                            android:textStyle="bold"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginRight="12dp"
-                            android:layout_marginTop="6dp"
-                            android:layout_marginBottom="6dp"
-                            />
+                            android:textStyle="bold" />
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
@@ -459,28 +457,28 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
                             android:layout_marginLeft="12dp"
                             android:gravity="center"
                             android:text="Misi Terbaru"
                             android:textColor="@color/colorAccent"
                             android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"/>
+                            android:textStyle="bold" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
                             android:layout_marginRight="12dp"
+                            android:layout_marginBottom="6dp"
                             android:background="@drawable/roundwithstroke"
                             android:text="Lihat Lainnya"
                             android:textColor="@color/colorAccent"
                             android:textSize="8dp"
                             android:textStyle="bold"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="6dp"
-                            android:layout_marginBottom="6dp"
 
                             />
                     </RelativeLayout>
@@ -513,34 +511,127 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
                             android:layout_marginLeft="12dp"
                             android:gravity="center"
                             android:text="Poster Terbaru"
                             android:textColor="@color/colorAccent"
                             android:textSize="16dp"
-                            android:textStyle="bold"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"/>
+                            android:textStyle="bold" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
                             android:layout_marginRight="12dp"
+                            android:layout_marginBottom="6dp"
                             android:background="@drawable/roundwithstroke"
                             android:text="Lihat Lainnya"
                             android:textColor="@color/colorAccent"
                             android:textSize="8dp"
                             android:textStyle="bold"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="6dp"
-                            android:layout_marginBottom="6dp"
 
                             />
                     </RelativeLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/poster_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/worker" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/lowongan_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="60dp"
+                            android:text="Lihat Lowongan Kerja Exclusive dari Partner ReynaldLancer"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:layout_width="100dp"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/lowongan_text"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Explore"
+                            android:textColor="@color/colorAccent" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedorange"
+                    android:orientation="vertical"
+                    xmlns:android="http://schemas.android.com/apk/res/android">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:gravity="center"
+                            android:text="HERO Academy"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginBottom="6dp"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Lihat Lainnya"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="8dp"
+                            android:textStyle="bold"
+
+                            />
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/heroac_rv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"

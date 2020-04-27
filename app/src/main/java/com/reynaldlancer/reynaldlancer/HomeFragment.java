@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
     Button button_nav;
     DrawerLayout drawerLayout;
     ViewFlipper promo_layout;
-    RecyclerView RV_tugas, RV_misi, RV_poster;
+    RecyclerView RV_tugas, RV_misi, RV_poster, RV_academy;
 
 
 
@@ -56,6 +56,7 @@ public class HomeFragment extends Fragment {
         RV_tugas = v.findViewById(R.id.tugas_rv);
         RV_misi = v.findViewById(R.id.misi_rv);
         RV_poster = v.findViewById(R.id.poster_rv);
+        RV_academy = v.findViewById(R.id.heroac_rv);
         //for images promo
         int image[] = {R.mipmap.slide1, R.mipmap.slide2, R.mipmap.slide3};
         for (int i = 0; i < image.length; i++){
@@ -97,6 +98,16 @@ public class HomeFragment extends Fragment {
 
         PosterRvAdapter posterRvAdapter = new PosterRvAdapter(tugasDummy.dummy(), getActivity());
         RV_poster.setAdapter(posterRvAdapter);
+
+        //for hero academy
+
+        HeroAcademyDummy dummyAc = new HeroAcademyDummy();
+        LinearLayoutManager tugaslayoutManager4 = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
+        RV_academy.setLayoutManager(tugaslayoutManager4);
+        RV_academy.setItemAnimator(new DefaultItemAnimator());
+
+        HeroAcademyRvAdapter heroAcademyRvAdapter = new HeroAcademyRvAdapter(dummyAc.dummy(), getActivity());
+        RV_academy.setAdapter(heroAcademyRvAdapter);
 
         return  v;
 
