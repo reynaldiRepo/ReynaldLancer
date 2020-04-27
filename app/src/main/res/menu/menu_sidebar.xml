@@ -14,7 +14,7 @@
         android:id="@+id/kebijakan"
         android:icon="@drawable/kebijakan"/>
     <item
-        android:title="Ajak Teman (Referar)"
+        android:title="Ajak Teman (Referal)"
         android:id="@+id/referal"
         android:icon="@drawable/referal"/>
     <item

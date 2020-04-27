@@ -161,16 +161,19 @@
             </RelativeLayout>
 
             //jumlah point token voucher
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
                 android:layout_marginTop="3dp"
                 android:background="@drawable/roundedwhite_shadow"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
+
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
@@ -178,11 +181,13 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginRight="8dp"
                         android:src="@drawable/token" />
+
                     <LinearLayout
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/token_text"
                             android:layout_width="match_parent"
@@ -191,6 +196,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15dp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/token_text_label"
                             android:layout_width="match_parent"
@@ -201,10 +207,12 @@
                             android:textStyle="normal" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
+
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
@@ -212,11 +220,13 @@
                         android:layout_marginLeft="25dp"
                         android:layout_marginRight="8dp"
                         android:src="@drawable/point" />
+
                     <LinearLayout
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/point_text"
                             android:layout_width="match_parent"
@@ -225,6 +235,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15dp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/point_text_label"
                             android:layout_width="match_parent"
@@ -235,10 +246,12 @@
                             android:textStyle="normal" />
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center">
+
                     <ImageView
                         android:layout_width="30dp"
                         android:layout_height="30dp"
@@ -246,11 +259,13 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="8dp"
                         android:src="@drawable/point" />
+
                     <LinearLayout
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:orientation="vertical">
+
                         <TextView
                             android:id="@+id/voucher_text"
                             android:layout_width="match_parent"
@@ -259,6 +274,7 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="15dp"
                             android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/voucher_text_label"
                             android:layout_width="match_parent"
@@ -274,63 +290,108 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                >
+                android:layout_height="60dp">
 
                 <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal"
                     android:id="@+id/posting_tugas"
-
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal"
                     >
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_margin="8dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/tugas" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Posting Tugas"
+                        android:layout_gravity="center"/>
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal"
                     android:id="@+id/posting_misi"
-                    android:layout_toRightOf="@id/posting_tugas"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    >
+                    android:layout_toRightOf="@id/posting_tugas"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_margin="8dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/misi" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Posting Misi"
+                        android:layout_gravity="center"/>
+
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/posting_poster"
                     android:layout_width="120dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal"
-                    android:id="@+id/posting_poster"
-                    android:layout_toRightOf="@id/posting_misi"
                     android:layout_marginLeft="8dp"
-                    >
+                    android:layout_toRightOf="@id/posting_misi"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_margin="8dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/poster" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Posting Poster"
+                        android:layout_gravity="center"/>
                 </LinearLayout>
 
             </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginTop="18dp"
+                android:padding="10dp"
+                android:background="@color/colorPrimaryDark">
 
+                <ViewFlipper
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/promo"
+                    />
 
-
-
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 
-<!--            <com.google.android.material.navigation.NavigationView-->
-<!--                android:id="@+id/side_nav"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_gravity="end"-->
-<!--                android:background="@color/colorPrimary"-->
-<!--                android:elevation="10dp"-->
-<!--                app:headerLayout="@layout/headersidebar"-->
-<!--                app:itemIconTint="@color/colorAccent"-->
-<!--                app:itemTextColor="@color/colorAccent"-->
-<!--                app:menu="@menu/menu_sidebar" />-->
+                <com.google.android.material.navigation.NavigationView
+                    android:id="@+id/side_nav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:background="@color/colorPrimary"
+                    android:elevation="10dp"
+                    app:headerLayout="@layout/headersidebar"
+                    app:itemIconTint="@color/colorAccent"
+                    app:itemTextColor="@color/colorAccent"
+                    app:menu="@menu/menu_sidebar" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
