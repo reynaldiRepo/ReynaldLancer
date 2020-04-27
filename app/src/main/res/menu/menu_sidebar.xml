@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Bantuan"
+        android:id="@+id/bantuan"
+        android:icon="@drawable/bantuan"
+        />
+    <item
+        android:title="Syarat dan Ketentuan"
+        android:id="@+id/term"
+        android:icon="@drawable/syarat"/>
+    <item
+        android:title="Keijakan Privasi"
+        android:id="@+id/kebijakan"
+        android:icon="@drawable/kebijakan"/>
+    <item
+        android:title="Ajak Teman (Referar)"
+        android:id="@+id/referal"
+        android:icon="@drawable/referal"/>
+    <item
+        android:title="Feedback"
+        android:id="@+id/feedback"
+        android:icon="@drawable/feedback"/>
+    <item
+        android:title="Tentang"
+        android:id="@+id/tentang"
+        android:icon="@drawable/about"/>
+</menu>

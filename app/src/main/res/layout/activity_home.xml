@@ -9,7 +9,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/fragmaent_place"/>
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
         android:elevation="16dp"
         android:padding="8dp"
         app:cnb_menuResource="@menu/menu_bottom"
+        android:id="@+id/bottom_nav"
         >
 
     </com.ismaeldivita.chipnavigation.ChipNavigationBar>
