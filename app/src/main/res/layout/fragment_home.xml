@@ -2,6 +2,7 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
@@ -11,76 +12,325 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="16dp"
         android:layout_marginBottom="72dp">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/home_logo"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="5dp"
-                android:padding="3dp"
-                android:src="@mipmap/logo" />
+            <RelativeLayout
+                android:id="@+id/toolbarPlace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/search_input"
-                android:layout_width="230dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="12dp"
-                android:layout_toRightOf="@id/home_logo"
-                android:background="@drawable/search_input"
-                android:drawableLeft="@drawable/search"
-                android:hint="Search"
-                android:padding="8dp"
-                android:textAlignment="center"
-                android:textSize="18dp" />
+                <ImageView
+                    android:id="@+id/home_logo"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="3dp"
+                    android:src="@mipmap/logo" />
 
-            <Button
-                android:id="@+id/favorite_button"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/search_input"
-                android:background="@drawable/ic_favorite_black_24dp" />
+                <EditText
+                    android:id="@+id/search_input"
+                    android:layout_width="200dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/home_logo"
+                    android:background="@drawable/search_input"
+                    android:drawableLeft="@drawable/search"
+                    android:hint="Search"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    android:textSize="18dp" />
 
-            <Button
-                android:id="@+id/notif_button"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/favorite_button"
-                android:background="@drawable/alert" />
+                <Button
+                    android:id="@+id/favorite_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/search_input"
+                    android:background="@drawable/ic_favorite_black_24dp" />
 
-            <Button
-                android:id="@+id/sidebar_button"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_toRightOf="@id/notif_button"
-                android:background="@drawable/menu" />
-        </RelativeLayout>
+                <Button
+                    android:id="@+id/notif_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/favorite_button"
+                    android:background="@drawable/alert" />
 
+                <Button
+                    android:id="@+id/sidebar_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_toRightOf="@id/notif_button"
+                    android:background="@drawable/menu" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/roundedorange">
+
+                <LinearLayout
+                    android:id="@+id/saldo_text_place"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/wallet_image"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/wallet" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_toRightOf="@id/wallet_image"
+                            android:text="Saldo kamu"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/saldo_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="5dp"
+                            android:text="Rp. 1.200.000,-"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/saldo_text_place"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/tambah_saldo"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/roundwhite"
+                        android:text="Tambah"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary" />
+
+                    <Button
+                        android:id="@+id/tarik_saldo"
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/roundwithstroke"
+                        android:text="Tarik"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorAccent" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            //jumlah point token voucher
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/token" />
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/token_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/token_text_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Token"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/point" />
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/point_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="100"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/point_text_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Points"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/point" />
+                    <LinearLayout
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/voucher_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/voucher_text_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Voucher"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="15dp"
+                            android:textStyle="normal" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            //jumlah point token voucher end
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal"
+                    android:id="@+id/posting_tugas"
+
+                    >
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal"
+                    android:id="@+id/posting_misi"
+                    android:layout_toRightOf="@id/posting_tugas"
+                    android:layout_marginLeft="8dp"
+                    >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal"
+                    android:id="@+id/posting_poster"
+                    android:layout_toRightOf="@id/posting_misi"
+                    android:layout_marginLeft="8dp"
+                    >
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+
+        </LinearLayout>
     </ScrollView>
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:background="@color/colorPrimary"
-        app:itemTextColor="@color/colorAccent"
-        app:itemIconTint="@color/colorAccent"
-        app:menu="@menu/menu_sidebar"
-        android:elevation="10dp"
-        app:headerLayout="@layout/headersidebar"
-        />
+<!--            <com.google.android.material.navigation.NavigationView-->
+<!--                android:id="@+id/side_nav"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_gravity="end"-->
+<!--                android:background="@color/colorPrimary"-->
+<!--                android:elevation="10dp"-->
+<!--                app:headerLayout="@layout/headersidebar"-->
+<!--                app:itemIconTint="@color/colorAccent"-->
+<!--                app:itemTextColor="@color/colorAccent"-->
+<!--                app:menu="@menu/menu_sidebar" />-->
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
