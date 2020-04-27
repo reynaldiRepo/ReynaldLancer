@@ -10,12 +10,15 @@ import android.util.Log;
 
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
+import java.util.ArrayList;
+
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = HomeActivity.class.getSimpleName() ;
     ChipNavigationBar bottom_vav;
     FragmentManager fragmentManager;
     Fragment fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

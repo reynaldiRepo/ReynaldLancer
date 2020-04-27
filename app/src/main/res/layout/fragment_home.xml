@@ -9,389 +9,562 @@
     tools:context=".HomeFragment"
     tools:openDrawer="end">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginBottom="72dp">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/toolbarPlace"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp">
 
-            <RelativeLayout
-                android:id="@+id/toolbarPlace"
+            <ImageView
+                android:id="@+id/home_logo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="5dp"
+                android:padding="3dp"
+                android:src="@mipmap/logo" />
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="200dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/home_logo"
+                android:background="@drawable/search_input"
+                android:drawableLeft="@drawable/search"
+                android:hint="Search"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textSize="18dp" />
+
+            <Button
+                android:id="@+id/favorite_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/search_input"
+                android:background="@drawable/ic_favorite_black_24dp" />
+
+            <Button
+                android:id="@+id/notif_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/favorite_button"
+                android:background="@drawable/alert" />
+
+            <Button
+                android:id="@+id/sidebar_button"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/notif_button"
+                android:background="@drawable/menu" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fillViewport="true"
+            >
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/home_logo"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginRight="5dp"
-                    android:padding="3dp"
-                    android:src="@mipmap/logo" />
 
-                <EditText
-                    android:id="@+id/search_input"
-                    android:layout_width="200dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_toRightOf="@id/home_logo"
-                    android:background="@drawable/search_input"
-                    android:drawableLeft="@drawable/search"
-                    android:hint="Search"
-                    android:padding="8dp"
-                    android:textAlignment="center"
-                    android:textSize="18dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/roundedorange">
 
-                <Button
-                    android:id="@+id/favorite_button"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_toRightOf="@id/search_input"
-                    android:background="@drawable/ic_favorite_black_24dp" />
+                    <LinearLayout
+                        android:id="@+id/saldo_text_place"
+                        android:layout_width="180dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/notif_button"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_toRightOf="@id/favorite_button"
-                    android:background="@drawable/alert" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/sidebar_button"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_toRightOf="@id/notif_button"
-                    android:background="@drawable/menu" />
-            </RelativeLayout>
+                            <ImageView
+                                android:id="@+id/wallet_image"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/wallet" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/roundedorange">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/wallet_image"
+                                android:text="Saldo kamu"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/saldo_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="Rp. 1.200.000,-"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="1dp"
+                        android:layout_toRightOf="@id/saldo_text_place"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/tambah_saldo"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/roundwhite"
+                            android:text="Tambah"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimary" />
+
+                        <Button
+                            android:id="@+id/tarik_saldo"
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Tarik"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                //jumlah point token voucher
 
                 <LinearLayout
-                    android:id="@+id/saldo_text_place"
-                    android:layout_width="180dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/token" />
+
+                        <LinearLayout
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/token_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="10"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/token_text_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Token"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/point" />
+
+                        <LinearLayout
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/point_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="100"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/point_text_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Points"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/point" />
+
+                        <LinearLayout
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/voucher_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/voucher_text_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Voucher"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                //jumlah point token voucher end
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp">
+
+                    <LinearLayout
+                        android:id="@+id/posting_tugas"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/roundedwhite_shadow"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:src="@mipmap/tugas" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Posting Tugas" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/posting_misi"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/posting_tugas"
+                        android:background="@drawable/roundedwhite_shadow"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:src="@mipmap/misi" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Posting Misi" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/posting_poster"
+                        android:layout_width="120dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/posting_misi"
+                        android:background="@drawable/roundedwhite_shadow"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:src="@mipmap/poster" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Posting Poster" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="18dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="10dp">
+
+                    <ViewFlipper
+                        android:id="@+id/promo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedwhite_shadow"
                     android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/wallet_image"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/wallet" />
+                        android:layout_height="50dp"
+                        android:background="@drawable/roundedorange"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginLeft="8dp"
-                            android:layout_toRightOf="@id/wallet_image"
-                            android:text="Saldo kamu"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="12dp"
+                            android:gravity="center"
+                            android:text="Tugas Terbaru"
                             android:textColor="@color/colorAccent"
                             android:textSize="16dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:layout_alignParentStart="true"
+
+                            />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Lihat Lainnya"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="8dp"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="12dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="6dp"
+                            />
                     </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/tugas_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="5dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="50dp"
+                        android:background="@drawable/roundedorange"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
 
                         <TextView
-                            android:id="@+id/saldo_text"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="5dp"
-                            android:text="Rp. 1.200.000,-"
+                            android:layout_marginLeft="12dp"
+                            android:gravity="center"
+                            android:text="Misi Terbaru"
                             android:textColor="@color/colorAccent"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Lihat Lainnya"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="8dp"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="6dp"
+
+                            />
                     </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/misi_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="5dp" />
+
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="1dp"
-                    android:layout_toRightOf="@id/saldo_text_place"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedwhite_shadow"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/tambah_saldo"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="8dp"
-                        android:background="@drawable/roundwhite"
-                        android:text="Tambah"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorPrimary" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/roundedorange"
+                        android:orientation="horizontal"
+                        android:padding="2dp">
 
-                    <Button
-                        android:id="@+id/tarik_saldo"
-                        android:layout_width="80dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/roundwithstroke"
-                        android:text="Tarik"
-                        android:textAlignment="center"
-                        android:textColor="@color/colorAccent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="12dp"
+                            android:gravity="center"
+                            android:text="Poster Terbaru"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"/>
 
-                </LinearLayout>
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="12dp"
+                            android:background="@drawable/roundwithstroke"
+                            android:text="Lihat Lainnya"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="8dp"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="6dp"
 
-            </RelativeLayout>
+                            />
+                    </RelativeLayout>
 
-            //jumlah point token voucher
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="3dp"
-                android:background="@drawable/roundedwhite_shadow"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/token" />
-
-                    <LinearLayout
-                        android:layout_width="50dp"
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/poster_rv"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="5dp" />
 
-                        <TextView
-                            android:id="@+id/token_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="10"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/token_text_label"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Token"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/point" />
-
-                    <LinearLayout
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/point_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="100"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/point_text_label"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Points"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/point" />
-
-                    <LinearLayout
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/voucher_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="5"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/voucher_text_label"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Voucher"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="15dp"
-                            android:textStyle="normal" />
-                    </LinearLayout>
-                </LinearLayout>
             </LinearLayout>
-            //jumlah point token voucher end
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-
-                <LinearLayout
-                    android:id="@+id/posting_tugas"
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal"
-                    >
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_margin="8dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/tugas" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Posting Tugas"
-                        android:layout_gravity="center"/>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/posting_misi"
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_toRightOf="@id/posting_tugas"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_margin="8dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/misi" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Posting Misi"
-                        android:layout_gravity="center"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/posting_poster"
-                    android:layout_width="120dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_toRightOf="@id/posting_misi"
-                    android:background="@drawable/roundedwhite_shadow"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_margin="8dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:src="@mipmap/poster" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Posting Poster"
-                        android:layout_gravity="center"/>
-                </LinearLayout>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:layout_marginTop="18dp"
-                android:padding="10dp"
-                android:background="@color/colorPrimaryDark">
-
-                <ViewFlipper
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/promo"
-                    />
-
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
-
-                <com.google.android.material.navigation.NavigationView
-                    android:id="@+id/side_nav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="end"
-                    android:background="@color/colorPrimary"
-                    android:elevation="10dp"
-                    app:headerLayout="@layout/headersidebar"
-                    app:itemIconTint="@color/colorAccent"
-                    app:itemTextColor="@color/colorAccent"
-                    app:menu="@menu/menu_sidebar" />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/side_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/colorPrimary"
+        android:elevation="10dp"
+        app:headerLayout="@layout/headersidebar"
+        app:itemIconTint="@color/colorAccent"
+        app:itemTextColor="@color/colorAccent"
+        app:menu="@menu/menu_sidebar" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
