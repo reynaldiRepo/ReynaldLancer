@@ -267,7 +267,7 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="20dp"
                             android:layout_marginRight="8dp"
-                            android:src="@drawable/point" />
+                            android:src="@drawable/coupon" />
 
                         <LinearLayout
                             android:layout_width="80dp"

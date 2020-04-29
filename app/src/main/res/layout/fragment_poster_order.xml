@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    tools:context=".PosterOrder"
+    android:orientation="vertical">
+
+    
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/status_poster_hero"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorGrey"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/colorAccent"
+        app:tabIndicatorColor="@color/colorPrimary">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/poster_semua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="semua"
+
+            />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/poster_menawarkan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Queue" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/dikerjakan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dimuat" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/selesai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="selesai" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" android:gravity="center">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/tidakadaposter" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum Ada poster"
+            android:textAlignment="center"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <Button
+            android:layout_marginTop="12dp"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedorange"
+            android:text="Join poster"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/tidakadaposter_btn">
+
+        </Button>
+
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

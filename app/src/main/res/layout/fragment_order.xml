@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorAccent"
-    tools:context=".OrderFragment">
+    tools:context=".OrderFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/roundedwhite_shadow"
+        android:elevation="16dp"
+        android:padding="8dp"
+        app:cnb_menuResource="@menu/ordermenu"
+        android:id="@+id/order_menu"
+        />
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/order"
-        android:gravity="center"/>
+        android:id="@+id/order_record"/>
 
-</RelativeLayout>
+
+</LinearLayout>

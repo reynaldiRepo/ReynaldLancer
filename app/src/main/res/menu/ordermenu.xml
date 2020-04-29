@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cnb_unselectedColor="@color/colorAccent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Tugas_menu"
+        android:icon="@drawable/tugas"
+        app:cnb_iconColor="@color/colorPrimary"
+        app:cnb_textColor="@color/colorPrimary"
+        app:cnb_backgroundColor="@color/colorGrey"
+        android:title="Tugas"
+        />
+
+    <item
+        android:id="@+id/Misi_menu"
+        android:icon="@drawable/misi"
+        app:cnb_iconColor="@color/colorPrimary"
+        app:cnb_textColor="@color/colorPrimary"
+        app:cnb_backgroundColor="@color/colorGrey"
+        android:title="Misi"
+        />
+    <item
+        android:id="@+id/Poster_menu"
+        android:icon="@drawable/poster"
+        app:cnb_iconColor="@color/colorPrimary"
+        app:cnb_textColor="@color/colorPrimary"
+        app:cnb_backgroundColor="@color/colorGrey"
+        android:title="Poster"
+        />
+
+<!--    <item-->
+<!--        android:id="@+id/academy_menu"-->
+<!--        android:icon="@drawable/academy"-->
+<!--        app:cnb_iconColor="@color/colorPrimary"-->
+<!--        app:cnb_textColor="@color/colorPrimary"-->
+<!--        app:cnb_backgroundColor="@color/colorGrey"-->
+<!--        android:title="Hero Academy"-->
+<!--        />-->
+</menu>
