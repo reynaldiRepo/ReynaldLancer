@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:orientation="vertical"
+    tools:context=".FaqSaldoFragment">
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Frequently Asking Questions"
+                android:textSize="18dp" />
+
+            <LinearLayout
+                android:id="@+id/faq1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Apa Itu Dompet ?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/faq2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Apa Itu Dompet Utama ?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/faq3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Apa Itu Dompet Bonus ?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/faq4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="350dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Dapatkah melakukan split pembayaran menggunakan dompet utama dan dompet bonus?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/faq5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Apa bisa melakukan Penarikan Dompet Utama ?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/faq6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="3dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:padding="12dp"
+                        android:text="Apa bisa melakukan Penarikan Dompet Bonus ?"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/faq_icon_6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:src="@drawable/expand_more" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/faq_content_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="@string/lorem"
+                    android:textSize="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

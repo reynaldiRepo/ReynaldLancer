@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    app:cnb_unselectedColor="@color/colorAccent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home_back"
+        android:icon="@drawable/arrow_back"
+        app:cnb_iconColor="@color/colorPrimary"
+        app:cnb_textColor="@color/colorPrimary"
+        app:cnb_backgroundColor="@color/colorGrey"
+        android:title="Back to home"
+        />
+</menu>
