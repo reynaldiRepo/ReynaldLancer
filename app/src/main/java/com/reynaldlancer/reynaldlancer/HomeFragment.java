@@ -2,6 +2,7 @@ package com.reynaldlancer.reynaldlancer;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.view.GravityCompat;
@@ -31,14 +32,13 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
 
-    private static final String TAG = "Tugas dummy" ;
+    private static final String TAG = "Tugas dummy";
     NavigationView side_nav;
     Button button_nav;
     DrawerLayout drawerLayout;
     ViewFlipper promo_layout;
     RecyclerView RV_tugas, RV_misi, RV_poster, RV_academy;
-
-
+    Button tambah_saldo;
 
 
     public HomeFragment() {
@@ -57,9 +57,12 @@ public class HomeFragment extends Fragment {
         RV_misi = v.findViewById(R.id.misi_rv);
         RV_poster = v.findViewById(R.id.poster_rv);
         RV_academy = v.findViewById(R.id.heroac_rv);
+        tambah_saldo = v.findViewById(R.id.tambah_saldo);
+
+
         //for images promo
         int image[] = {R.mipmap.slide1, R.mipmap.slide2, R.mipmap.slide3};
-        for (int i = 0; i < image.length; i++){
+        for (int i = 0; i < image.length; i++) {
             runpromo(image[i]);
         }
 
@@ -109,14 +112,22 @@ public class HomeFragment extends Fragment {
         HeroAcademyRvAdapter heroAcademyRvAdapter = new HeroAcademyRvAdapter(dummyAc.dummy(), getActivity());
         RV_academy.setAdapter(heroAcademyRvAdapter);
 
-        return  v;
 
+        //logic for feature
+        //add saldo
+        tambah_saldo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent saldo = new Intent(getActivity(), SaldoActivity.class);
+                startActivity(saldo);
+            }
+        });
 
-
+        return v;
 
     }
 
-    private  void  runpromo(int Image){
+    private void runpromo(int Image) {
         ImageView imageView = new ImageView(getActivity());
         imageView.setBackgroundResource(Image);
 
