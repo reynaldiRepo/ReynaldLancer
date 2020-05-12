@@ -9,12 +9,29 @@
     android:layout_margin="8dp"
     android:orientation="vertical">
 
-    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:background="@drawable/roundedwhite_shadow"
-        app:cnb_menuResource="@menu/menu_saldo"
-        android:id="@+id/saldo_tollbar"/>
+        android:layout_height="55dp" android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="12dp"
+            android:src="@drawable/arrow_back"
+            android:layout_marginStart="12dp"
+            android:id="@+id/dompet_nav_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_toRightOf="@+id/dompet_nav_back"
+            android:text="Dompet"
+            android:textColor="@color/colorAccent"
+            android:textSize="22dp"
+            android:layout_marginStart="12dp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

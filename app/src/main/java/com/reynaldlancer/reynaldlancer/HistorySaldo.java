@@ -37,7 +37,7 @@ public class HistorySaldo extends Fragment {
         RVhiistory.setItemAnimator(new DefaultItemAnimator());
 
         //dummy rv
-        String dummy[][] = {{"Rp. 500.000", "01, January 2020", "Succcess"}, {"Rp. 500.000", "06, January 2020", "Succcess"}, {"Rp. 200.000", "12, January 2020", "Succcess"}};
+        String dummy[][] = {{"Rp. 500.000", "01, January 2020", "Succcess"}, {"Rp. 500.000", "06, January 2020", "Succcess"}, {"Rp. 200.000", "12, January 2020", "Proccess"}};
         ArrayList<HistoryModel> historyModels = new ArrayList<HistoryModel>();
         for (int i = 0; i < dummy.length; i++){
             historyModels.add(new HistoryModel(dummy[i][0], dummy[i][1], dummy[i][2]));

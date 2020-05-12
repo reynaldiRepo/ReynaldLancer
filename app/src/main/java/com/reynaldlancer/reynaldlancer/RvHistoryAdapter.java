@@ -26,11 +26,13 @@ class RvHistoryAdapter extends RecyclerView.Adapter<RvHistoryAdapter.ViewHolder>
         TextView amount;
         TextView date;
         TextView stautus;
+        TextView detail;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             amount = itemView.findViewById(R.id.history_ammount);
             date = itemView.findViewById(R.id.history_date);
             stautus = itemView.findViewById(R.id.history_status);
+            detail = itemView.findViewById(R.id.topup_detail);
 
         }
     }
@@ -52,6 +54,10 @@ class RvHistoryAdapter extends RecyclerView.Adapter<RvHistoryAdapter.ViewHolder>
         holder.amount.setText(history.amount);
         holder.date.setText(history.date);
         holder.stautus.setText(history.status);
+
+        if (history.status == "Proccess"){
+            holder.detail.setVisibility(View.VISIBLE);
+        }
 
 
     }
