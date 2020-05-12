@@ -66,11 +66,13 @@
         android:layout_height="100dp">
 
         <ImageView
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@mipmap/bri"
+            android:layout_marginVertical="8dp"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"/>
+            android:layout_marginStart="30dp"
+            />
 
         <LinearLayout
             android:layout_width="200dp"
@@ -78,7 +80,8 @@
             android:layout_alignParentEnd="true"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginEnd="20dp">
+            android:layout_marginEnd="20dp"
+            >
 
             <TextView
                 android:layout_width="wrap_content"

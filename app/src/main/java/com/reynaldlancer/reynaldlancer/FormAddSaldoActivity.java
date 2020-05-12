@@ -40,7 +40,9 @@ public class FormAddSaldoActivity extends AppCompatActivity {
                 }else{
                     int nominal = Integer.parseInt(Nominal.getText().toString());
                     if (nominal >= 15000){
-                        Toast.makeText(FormAddSaldoActivity.this, "kerja cok", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(FormAddSaldoActivity.this, TopupDetailActivity.class);
+                        intent.putExtra("amount", nominal);
+                        startActivity(intent);
                     }else{
                         Toast.makeText(FormAddSaldoActivity.this, "Minimal Top Up Rp. 15.000", Toast.LENGTH_SHORT).show();
                     }
