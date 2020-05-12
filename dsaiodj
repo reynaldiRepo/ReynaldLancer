@@ -1,0 +1,65 @@
+[33mcommit 93608fe928593fc96db7eb70e71fb769504dd645[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Tue May 12 13:33:01 2020 +0700
+
+    adding saldo view layout
+
+[33mcommit d3342c3160ffad1a437d2e6d1d24cf020e095a04[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Thu Apr 30 16:31:49 2020 +0700
+
+    add readme
+
+[33mcommit 863d37fe92bd71c2c5deb65ae6930c93c7913331[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Wed Apr 29 16:36:42 2020 +0700
+
+    create wireframe for order menu
+
+[33mcommit aeaa3df4e89ed3741c175e3f0bfc0594ac82c6c7[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Tue Apr 28 00:44:35 2020 +0700
+
+    Home version 0.1
+
+[33mcommit 4001535aa330dbc6ef69a4ec3f576b147b4903e9[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Mon Apr 27 23:06:00 2020 +0700
+
+    finishing tugas, poster, misi recyclerview
+
+[33mcommit e28db60ff16bdaa4492cd123fc6428aa0d9d5e22[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Mon Apr 27 14:20:16 2020 +0700
+
+    adding image slider
+
+[33mcommit 69dedb52779bb3fd8ade1f7fe4c5c89c7b6a1674[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Mon Apr 27 10:38:41 2020 +0700
+
+    + Saldo Section
+
+[33mcommit 461b0c5d406b78a0bb5b45dc58b83dc137236335[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Mon Apr 27 07:55:36 2020 +0700
+
+    create fragment
+
+[33mcommit 4c8dfdf5f415559e624a1a8b6a72b4d0cc36a167[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Sun Apr 26 21:49:36 2020 +0700
+
+    +fragments
+
+[33mcommit 18de707c40b61a95e561f8b33dc83a3c546fa263[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Sun Apr 26 21:41:05 2020 +0700
+
+    +splash screen +bottom navbar
+
+[33mcommit 1dbee41ce0d968edb97878e2c7f1e0d3cf5db08e[m
+Author: Reynaldi <38524172+reynaldiRepo@users.noreply.github.com>
+Date:   Thu Apr 16 16:25:20 2020 +0700
+
+    init project
