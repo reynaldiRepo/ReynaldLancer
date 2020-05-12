@@ -9,7 +9,8 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FormAddSaldoActivity"></activity>
+        <activity android:name=".TopupDetailActivity"></activity>
+        <activity android:name=".FormAddSaldoActivity" />
         <activity android:name=".SaldoActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>

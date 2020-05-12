@@ -35,7 +35,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="12dp"
         android:background="@drawable/bottomstroke"
         android:orientation="vertical"
@@ -55,15 +55,20 @@
             android:id="@+id/nominal_topup"
             android:inputType="numberDecimal"/>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/roundedorange"
             android:text="TOP UP"
             android:textColor="@color/colorAccent"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_alignParentBottom="true"
             android:id="@+id/topup_btn"/>
-
+        </RelativeLayout>
     </LinearLayout>
 
 </LinearLayout>
