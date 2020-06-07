@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    android:orientation="vertical"
+    tools:context=".KonfirmasiTopUp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@drawable/bottomstroke"
+        android:orientation="vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telah Tramsfer dana sejumlah"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/konfirmasi_top_up_jumlah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp. 15.000"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:src="@mipmap/bri" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="an. PT REYNALDIAJA"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6202702147024" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nomor Rekening" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/no_rek_top_up"
+            android:hint="Nomor Rekening"
+            android:inputType="number"
+            android:backgroundTint="@color/colorPrimary"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rekening Atas Nama"
+            android:layout_marginTop="12dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nama_rek_top_up"
+            android:hint="Atas Nama"
+            android:backgroundTint="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Bukti Transfer"
+            android:layout_marginTop="12dp"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_insert_photo_black_24dp"
+            android:layout_gravity="center"
+            android:id="@+id/insert_bukti_top_up" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedorange"
+            android:text="KONFIRMASI"
+            android:textSize="20dp"
+            android:textColor="@color/colorAccent" />
+
+
+    </LinearLayout>git
+
+</LinearLayout>
