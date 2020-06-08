@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
     DrawerLayout drawerLayout;
     ViewFlipper promo_layout;
     RecyclerView RV_tugas, RV_misi, RV_poster, RV_academy;
-    Button tambah_saldo;
+    Button tambah_saldo, tarik_saldo;
 
 
     public HomeFragment() {
@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
         RV_poster = v.findViewById(R.id.poster_rv);
         RV_academy = v.findViewById(R.id.heroac_rv);
         tambah_saldo = v.findViewById(R.id.tambah_saldo);
+        tarik_saldo = v.findViewById(R.id.tarik_saldo);
 
 
         //for images promo
@@ -119,6 +120,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent saldo = new Intent(getActivity(), SaldoActivity.class);
+                startActivity(saldo);
+            }
+        });
+        tarik_saldo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent saldo = new Intent(getActivity(), TarikActivity.class);
                 startActivity(saldo);
             }
         });

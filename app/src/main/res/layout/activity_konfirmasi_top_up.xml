@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="170dp"
         android:background="@drawable/bottomstroke"
         android:orientation="vertical"
         android:paddingHorizontal="12dp"
@@ -33,7 +33,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="10">
 
@@ -119,8 +119,6 @@
             android:text="KONFIRMASI"
             android:textSize="20dp"
             android:textColor="@color/colorAccent" />
-
-
     </LinearLayout>git
 
 </LinearLayout>

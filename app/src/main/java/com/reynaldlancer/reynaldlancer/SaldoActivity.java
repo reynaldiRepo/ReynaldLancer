@@ -19,7 +19,7 @@ public class SaldoActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager;
     TabLayout tabfaqhis;
-    Button tambah_saldo;
+    Button tambah_saldo, tarik_saldo;
     ImageView backward;
 
     @Override
@@ -65,6 +65,15 @@ public class SaldoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SaldoActivity.this, FormAddSaldoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tarik_saldo = findViewById(R.id.tarik_saldo_in);
+        tarik_saldo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SaldoActivity.this, TarikActivity.class);
                 startActivity(intent);
             }
         });
