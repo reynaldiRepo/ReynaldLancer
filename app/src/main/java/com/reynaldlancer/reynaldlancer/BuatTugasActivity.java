@@ -2,11 +2,16 @@ package com.reynaldlancer.reynaldlancer;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
@@ -18,14 +23,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class BuatTugasActivity extends AppCompatActivity {
 
     Calendar myCalendar;
     TextView tugas_mulai, tugas_selesai;
-    RadioGroup type_tempat_tugas;
-    LinearLayout lokasi_tugas;
+    RadioGroup type_tempat_tugas, type_upah_tugas;
+    LinearLayout lokasi_tugas, lokasi_upah;
     Spinner kategori_input;
+    TextView counter_desc;
+    EditText deskripsi;
 
 
     @Override
@@ -75,6 +83,54 @@ public class BuatTugasActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_dropdown_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         kategori_input.setAdapter(adapter);
+
+        //upah
+        lokasi_upah = findViewById(R.id.tempat_input_upah_tugas);
+        type_upah_tugas = findViewById(R.id.upah_tugas_radio_grup);
+        type_upah_tugas.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.buka_penawaran_tugas_radio_btn:
+                        lokasi_upah.setVisibility(View.GONE);
+                        break;
+                    case R.id.upah_tugas_radio_btn:
+                        lokasi_upah.setVisibility(View.VISIBLE);
+                        break;
+                }
+            }
+        });
+
+        //for upload --- only dummy\
+        RecyclerView RVimagePrev = findViewById(R.id.tugas_img_des);
+        LinearLayoutManager tugaslayoutManager = new LinearLayoutManager(BuatTugasActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        RVimagePrev.setLayoutManager(tugaslayoutManager);
+        RVimagePrev.setItemAnimator(new DefaultItemAnimator());
+
+        ArrayList<ImageDeskripsiModel> image_dummy = new ArrayList<ImageDeskripsiModel>();
+        image_dummy.add(new ImageDeskripsiModel(R.drawable.upload_img));
+        ImageDeskripsiAdapter imageDeskripsiAdapter = new ImageDeskripsiAdapter(image_dummy, BuatTugasActivity.this);
+        RVimagePrev.setAdapter(imageDeskripsiAdapter);
+
+
+        //deskripsi
+        counter_desc = findViewById(R.id.input_deskripsi_tugas_counter);
+        deskripsi = findViewById(R.id.input_deskripsi_tugas);
+        deskripsi.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                counter_desc.setText(Integer.toString(deskripsi.getText().length())+"/100 Karakter");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
 
     }
 

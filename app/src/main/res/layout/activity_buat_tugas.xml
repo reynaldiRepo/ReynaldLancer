@@ -17,7 +17,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginVertical="12dp"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="8dp"
             android:src="@drawable/arrow_back" />
 
         <TextView
@@ -60,10 +60,11 @@
                 android:textStyle="bold" />
 
             <Spinner
+                android:layout_marginTop="6dp"
                 android:id="@+id/kategori_tugas"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/bottomstroke" />
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,9 +77,10 @@
                 android:id="@+id/input_judul_tugas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/rounded_stroke"
                 android:hint="Judul"
-                android:padding="4dp"
-                android:background="@drawable/bottomstroke"/>
+                android:padding="12dp"
+                android:layout_marginTop="6dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,8 +94,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_weight="5"
                     android:text="Deskripsi Tugas"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/input_deskripsi_tugas_counter"
@@ -111,15 +112,17 @@
                 android:id="@+id/input_deskripsi_tugas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bottomstroke"
+                android:background="@drawable/rounded_stroke"
                 android:gravity="top"
                 android:hint="Deskripsi"
                 android:inputType="textMultiLine"
                 android:lines="5"
                 android:maxLines="10"
-                android:minLines="3"
-                android:padding="4dp"
-                android:scrollbars="vertical" />
+                android:minLines="8"
+                android:layout_marginTop="6dp"
+                android:padding="12dp"
+                android:scrollbars="vertical"
+                android:maxLength="100"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tugas_img_des"
@@ -134,15 +137,14 @@
                 android:layout_marginTop="6dp"
                 android:background="@drawable/roundedorange"
                 android:text="Tambah gambar (Opsional)"
-                android:textColor="@color/colorAccent"
-                 />
+                android:textColor="@color/colorAccent" />
 
             <RadioGroup
+                android:id="@+id/lokasi_tugas_radio_grup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:orientation="horizontal"
-                android:id="@+id/lokasi_tugas_radio_grup">
+                android:orientation="horizontal">
 
                 <RadioButton
                     android:id="@+id/tugas_via_online_radio_btn"
@@ -162,11 +164,11 @@
             </RadioGroup>
 
             <LinearLayout
+                android:id="@+id/tempat_input_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/tempat_input_layout"
                 android:layout_marginTop="12dp"
+                android:orientation="vertical"
                 android:visibility="gone">
 
                 <TextView
@@ -176,30 +178,27 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/kota_tugas_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_stroke"
                     android:hint="Kota"
-                    android:background="@drawable/bottomstroke"
-                    android:padding="4dp"
-                    android:id="@+id/kota_tugas_input"/>
+                    android:padding="12dp" />
 
                 <TextView
-                    android:layout_marginTop="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:text="Maps Pin Point"
                     android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/kota_pinpoitn_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_stroke"
                     android:hint="Kota"
-                    android:background="@drawable/bottomstroke"
-                    android:padding="4dp"
-                    android:id="@+id/kota_pinpoitn_input"/>
-
-
-
-
+                    android:padding="12dp" />
 
 
             </LinearLayout>
@@ -207,16 +206,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:text="Waktu Tugas"
-                android:textStyle="bold"
-                android:layout_marginTop="12dp"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
                 android:orientation="horizontal"
-                android:weightSum="10"
-                android:layout_marginVertical="12dp">
+                android:weightSum="10">
 
                 <TextView
                     android:id="@+id/mulai_tugas_input"
@@ -224,29 +223,28 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="6dp"
                     android:layout_weight="5"
+                    android:background="@drawable/rounded_stroke"
                     android:drawableLeft="@drawable/calendar"
                     android:hint="Mulai"
-                    android:textSize="18dp"
-                    android:padding="4dp"
-                    android:background="@drawable/bottomstroke"
-                    />
+                    android:padding="12dp"
+                    android:textSize="18dp" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:src="@drawable/right_arrow" />
+
                 <TextView
                     android:id="@+id/selesai_tugas_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginHorizontal="12dp"
                     android:layout_weight="5"
+                    android:background="@drawable/rounded_stroke"
                     android:drawableLeft="@drawable/calendar"
                     android:hint="Selesai"
-                    android:textSize="18dp"
-                    android:padding="4dp"
-                    android:background="@drawable/bottomstroke"
-                     />
+                    android:padding="12dp"
+                    android:textSize="18dp" />
             </LinearLayout>
 
             <TextView
@@ -257,6 +255,7 @@
                 android:textStyle="bold" />
 
             <RadioGroup
+                android:id="@+id/upah_tugas_radio_grup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -278,6 +277,28 @@
                     android:checked="false"
                     android:text="Tentukan Upah" />
             </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/tempat_input_upah_tugas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="12dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Upah" />
+                <EditText
+                    android:id="@+id/input_upah_tugas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_stroke"
+                    android:hint="Nominal"
+                    android:padding="12dp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -303,6 +324,15 @@
                     android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Posting Tugas"
+                android:id="@+id/btn_posting_tugas"
+                android:background="@drawable/roundedorange"
+                android:textColor="@color/colorAccent"
+                android:layout_marginTop="12dp"/>
 
         </LinearLayout>
     </ScrollView>
