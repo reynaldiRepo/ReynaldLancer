@@ -22,4 +22,29 @@
         <item>OCBC</item>
         <item>OVO</item>
     </string-array>
+    <string-array name="kategori_arr">
+        <item>Bisnis dan Admin</item>
+        <item>Marketing dan Sales</item>
+        <item>Design dan Programing</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string name="tugas_pendahuluan">
+        Fitur yang digunakan untuk memberikan penawaran kepada Hero dengan Sistem Bid(Penawaran)
+        \n\n
+        - Harga per satuan Pekerjaan\n
+        - Bisa Negosiasi Harga\n
+        - Hero dapat menegerjakan tugas setelah dipilih olehmu\n
+        - Ada Jangka waktu pencarian Hero dan Pengerjaan Tugas\n
+    </string>
+    <string name="misi_pendahuluan">
+        Fitur yang digunakan untuk memberikan pekerjaan kepada Hero dengan sistem komisi
+        \n\n
+        - Harga per item misi\n
+        - Bisa Komisi Fix\n
+        - Pembagian komisi berdasarka klaim dari nego
+    </string>
+    <string name="poster_pendahuluan">
+        Fitur yang digunakan untuk publikasi iklam, Lowongan Pekerjaan, berjualan, info event, atau informasi apapun yang bersifat umum
+    </string>
+    <string name="msg_buat_tugas">Fitur tugas hanya untuk mencari bantuan, feedback tidak diperuntukan untuk erjualan,pengguna yang melanggar ketentuan diblok secara permanen</string>
 </resources>

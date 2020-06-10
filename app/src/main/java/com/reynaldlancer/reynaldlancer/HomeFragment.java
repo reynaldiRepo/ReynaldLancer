@@ -39,7 +39,10 @@ public class HomeFragment extends Fragment {
     ViewFlipper promo_layout;
     RecyclerView RV_tugas, RV_misi, RV_poster, RV_academy;
     Button tambah_saldo, tarik_saldo;
+    LinearLayout posting_tugas, posting_misi, posting_poster;
 
+//    #dialog_fragment
+    DialogMulaiTranksaksi dialog;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -59,6 +62,9 @@ public class HomeFragment extends Fragment {
         RV_academy = v.findViewById(R.id.heroac_rv);
         tambah_saldo = v.findViewById(R.id.tambah_saldo);
         tarik_saldo = v.findViewById(R.id.tarik_saldo);
+        posting_tugas = v.findViewById(R.id.posting_tugas);
+        posting_misi = v.findViewById(R.id.posting_misi);
+        posting_poster = v.findViewById(R.id.posting_poster);
 
 
         //for images promo
@@ -128,6 +134,57 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent saldo = new Intent(getActivity(), TarikActivity.class);
                 startActivity(saldo);
+            }
+        });
+
+//        dialog before posting
+        dialog = new DialogMulaiTranksaksi();
+        posting_tugas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setJudul("BUAT TUGAS");
+                dialog.setIsi(getString(R.string.tugas_pendahuluan));
+                dialog.setNext_event(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), BuatTugasActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                dialog.setImageID(R.mipmap.tugas);
+                dialog.show(getChildFragmentManager(), "Posting");
+            }
+        });
+
+        posting_poster.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setJudul("BUAT POSTER");
+                dialog.setIsi(getString(R.string.poster_pendahuluan));
+                dialog.setNext_event(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getActivity(), "Create Poster", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialog.setImageID(R.mipmap.poster);
+                dialog.show(getChildFragmentManager(), "Posting");
+            }
+        });
+
+        posting_misi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.setJudul("BUAT MISI");
+                dialog.setIsi(getString(R.string.misi_pendahuluan));
+                dialog.setNext_event(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getActivity(), "Create MISI", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                dialog.setImageID(R.mipmap.misi);
+                dialog.show(getChildFragmentManager(), "Posting");
             }
         });
 
