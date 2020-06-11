@@ -28,6 +28,12 @@
         <item>Design dan Programing</item>
         <item>Lainnya</item>
     </string-array>
+    <string-array name="kategori_misi_arr">
+        <item>Sales dan Marketing</item>
+        <item>Reseller dan Dropshipper</item>
+        <item>Survey dan Acquistion</item>
+        <item>Lainnya</item>
+    </string-array>
     <string name="tugas_pendahuluan">
         Fitur yang digunakan untuk memberikan penawaran kepada Hero dengan Sistem Bid(Penawaran)
         \n\n
@@ -47,4 +53,5 @@
         Fitur yang digunakan untuk publikasi iklam, Lowongan Pekerjaan, berjualan, info event, atau informasi apapun yang bersifat umum
     </string>
     <string name="msg_buat_tugas">Fitur tugas hanya untuk mencari bantuan, feedback tidak diperuntukan untuk erjualan,pengguna yang melanggar ketentuan diblok secara permanen</string>
+    <string name="misi_msg">Fitur misi digunakan untuk mencari orang yang dapat membantu dengan bayaran komisi per satuan item</string>
 </resources>

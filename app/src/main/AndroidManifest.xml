@@ -15,7 +15,8 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuatTugasActivity"></activity>
+        <activity android:name=".BuatMisiActivity"></activity>
+        <activity android:name=".BuatTugasActivity" />
         <activity android:name=".TarikActivity" />
         <activity android:name=".KonfirmasiTopUp" />
         <activity android:name=".TopupDetailActivity" />

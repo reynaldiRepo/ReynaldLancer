@@ -4,10 +4,11 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:background="@mipmap/tugas"
         android:id="@+id/image_deskripsi_prev"
+        android:layout_margin="12dp"
         >
 
         <ImageView

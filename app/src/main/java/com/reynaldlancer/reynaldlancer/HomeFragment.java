@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
     Button tambah_saldo, tarik_saldo;
     LinearLayout posting_tugas, posting_misi, posting_poster;
 
-//    #dialog_fragment
+    //    #dialog_fragment
     DialogMulaiTranksaksi dialog;
 
     public HomeFragment() {
@@ -180,7 +180,8 @@ public class HomeFragment extends Fragment {
                 dialog.setNext_event(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getActivity(), "Create MISI", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), BuatMisiActivity.class);
+                        startActivity(intent);
                     }
                 });
                 dialog.setImageID(R.mipmap.misi);

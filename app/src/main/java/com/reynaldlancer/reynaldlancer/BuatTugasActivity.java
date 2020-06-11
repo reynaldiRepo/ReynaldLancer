@@ -108,7 +108,7 @@ public class BuatTugasActivity extends AppCompatActivity {
         RVimagePrev.setItemAnimator(new DefaultItemAnimator());
 
         ArrayList<ImageDeskripsiModel> image_dummy = new ArrayList<ImageDeskripsiModel>();
-        image_dummy.add(new ImageDeskripsiModel(R.drawable.upload_img));
+        image_dummy.add(new ImageDeskripsiModel(R.mipmap.upload_icon));
         ImageDeskripsiAdapter imageDeskripsiAdapter = new ImageDeskripsiAdapter(image_dummy, BuatTugasActivity.this);
         RVimagePrev.setAdapter(imageDeskripsiAdapter);
 

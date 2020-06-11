@@ -46,7 +46,7 @@ public class ImageDeskripsiAdapter extends RecyclerView.Adapter<com.reynaldlance
     public void onBindViewHolder(@NonNull com.reynaldlancer.reynaldlancer.ImageDeskripsiAdapter.ViewHolder holder, int position) {
 
         ImageDeskripsiModel model = imageDeskripsiModel.get(position);
-        if (model.image == R.drawable.upload_img){
+        if (model.image == R.mipmap.upload_icon){
             holder.cancel_logo.setVisibility(View.GONE);
         }
         holder.foto.setBackgroundResource(model.image);
