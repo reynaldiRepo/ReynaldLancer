@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,11 +26,22 @@ public class BuatMisiActivity extends AppCompatActivity {
     LinearLayout layout_tempat_misi;
     TextView counter_desc;
     EditText deskripsi;
+    Spinner kategori_misi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buat_misi);
+
+        //for kategori spinner
+        kategori_misi = findViewById(R.id.kategori_misi);
+        ArrayAdapter<CharSequence> adapterKategori = ArrayAdapter.createFromResource(this, R.array.kategori_misi_arr,
+                android.R.layout.simple_spinner_dropdown_item);
+        adapterKategori.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        kategori_misi.setAdapter(adapterKategori);
+
+
+
 
         //for tempat_misi
         misi_tempat_checkbox = findViewById(R.id.misi_lokasi_chekcbox);
@@ -43,7 +56,6 @@ public class BuatMisiActivity extends AppCompatActivity {
                 }
             }
         });
-
 
 
         //for image item RV
@@ -66,8 +78,15 @@ public class BuatMisiActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ArrayItemMisi.add(new ItemMisiModel());
                 item_misi_adapter.notifyDataSetChanged();
+                item_misi_rv.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        item_misi_rv.smoothScrollToPosition(item_misi_adapter.getItemCount() - 1);
+                    }
+                });
             }
         });
+
 
         //deskripsi
         counter_desc = findViewById(R.id.input_deskripsi_misi_counter);

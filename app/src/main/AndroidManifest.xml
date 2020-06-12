@@ -15,14 +15,30 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuatMisiActivity"></activity>
-        <activity android:name=".BuatTugasActivity" />
-        <activity android:name=".TarikActivity" />
-        <activity android:name=".KonfirmasiTopUp" />
-        <activity android:name=".TopupDetailActivity" />
-        <activity android:name=".FormAddSaldoActivity" />
-        <activity android:name=".SaldoActivity" />
-        <activity android:name=".HomeActivity">
+        <activity
+            android:name=".BuatMisiActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".BuatTugasActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".TarikActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".KonfirmasiTopUp"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".TopupDetailActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".FormAddSaldoActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".SaldoActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".HomeActivity"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

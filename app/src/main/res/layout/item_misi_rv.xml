@@ -5,7 +5,8 @@
     android:orientation="horizontal"
     android:padding="12dp"
     android:weightSum="10"
-    android:background="@drawable/bottomstroke">
+    android:background="@drawable/bottomstroke"
+    android:layout_margin="6dp">
 
 
 
