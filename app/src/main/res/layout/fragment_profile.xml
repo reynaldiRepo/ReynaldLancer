@@ -3,12 +3,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment"
-    android:orientation="vertical">
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
+    android:orientation="vertical"
+    tools:context=".ProfileFragment">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/under_construction"
-        android:layout_margin="23dp"/>
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@mipmap/background_profile"
+                android:backgroundTint="@color/colorPrimary"
+                android:backgroundTintMode="multiply">
+
+                <Button
+                    android:id="@+id/edit_profile_btn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/edit_grey" />
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="22dp"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image_on_banner"
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="3dp"
+                        android:src="@mipmap/user" />
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="REYNALDI"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/saldo_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="-20dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:paddingHorizontal="12dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:text="Saldo : Rp 1.200.0000"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="40dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Level Profil"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gokil"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="6dp"
+                    />
+
+                <ProgressBar
+                    android:layout_marginTop="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@drawable/roundedorange"
+                    android:indeterminateDrawable="none"
+                    android:id="@+id/profile_progress"
+                    android:progress="20"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Lengkapi Profilemu"
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>
