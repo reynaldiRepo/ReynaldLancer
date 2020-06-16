@@ -34,6 +34,10 @@
         <item>Survey dan Acquistion</item>
         <item>Lainnya</item>
     </string-array>
+    <string-array name="kategori_poster_arr">
+        <item>Jasa</item>
+        <item>Jualan</item>
+    </string-array>
     <string name="tugas_pendahuluan">
         Fitur yang digunakan untuk memberikan penawaran kepada Hero dengan Sistem Bid(Penawaran)
         \n\n

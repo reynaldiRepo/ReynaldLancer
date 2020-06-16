@@ -164,7 +164,8 @@ public class HomeFragment extends Fragment {
                 dialog.setNext_event(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(getActivity(), "Create Poster", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), BuatPosterActivity.class);
+                        startActivity(intent);
                     }
                 });
                 dialog.setImageID(R.mipmap.poster);
