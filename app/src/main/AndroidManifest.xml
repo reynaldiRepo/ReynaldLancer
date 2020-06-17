@@ -15,7 +15,8 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BuatPosterActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".BuatPosterActivity" />
         <activity
             android:name=".BuatMisiActivity"
             android:windowSoftInputMode="adjustResize" />

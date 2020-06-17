@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:background="@mipmap/login_landsacape"
+        android:backgroundTint="@color/colorGrey"
+        android:backgroundTintMode="multiply">
+
+        <ImageView
+            android:id="@+id/logo_on_log"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="12dp"
+            android:src="@mipmap/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:layout_toRightOf="@+id/logo_on_log"
+            android:text="ReynaldLancer"
+            android:textColor="@color/colorAccent"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SELAMAT DATANG KEMBALI"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Silahkan masuk ke Akun Anda"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="Email"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/login_email_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/rounded_stroke"
+            android:hint="Email Anda"
+            android:inputType="textEmailAddress"
+            android:padding="6dp"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="Password"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/login_password_EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/rounded_stroke"
+            android:hint="Password Anda"
+            android:inputType="textPassword"
+            android:padding="6dp"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/roundedorange"
+            android:text="LOGIN"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum punya Akun ?" />
+
+            <TextView
+                android:id="@+id/register_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Sign In"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

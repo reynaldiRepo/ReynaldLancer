@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/greyrounded"
     android:orientation="vertical"
     tools:context=".ProfileFragment">
 
@@ -77,52 +78,148 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:background="@drawable/roundedwhite_shadow"
-                android:layout_marginTop="6dp"
-                android:orientation="vertical"
                 android:layout_marginHorizontal="40dp"
-                >
-
+                android:layout_marginTop="12dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical"
+                android:padding="12dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Level Profil"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    />
-
+                    android:textColor="@color/colorPrimaryDark" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:text="Gokil"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textStyle="bold"
                     android:textSize="20dp"
-                    android:layout_marginTop="6dp"
-                    />
-
-                <ProgressBar
-                    android:layout_marginTop="12dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:background="@drawable/roundedorange"
-                    android:indeterminateDrawable="none"
+                    android:textStyle="bold" />
+                <LinearLayout
                     android:id="@+id/profile_progress"
-                    android:progress="20"/>
-
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/roundedorange"
+                    android:orientation="horizontal" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
                     android:text="Lengkapi Profilemu"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Skill (Keahlian)"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/edit_skill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/edit_orange" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/msg_tidak_ada_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="beum ada skill" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/skill_profile_RV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Social Media"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/edit_sosmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/edit_orange" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/msg_tidak_ada_sosmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="beum ada social media" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sosmed_profile_RV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp" />
+            </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:background="@drawable/roundedwhite_shadow"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Pendidikan"
+                        android:textStyle="bold" />
 
+                    <ImageView
+                        android:id="@+id/edit_pendidikan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/edit_orange" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/msg_tidak_ada_pendidikan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="beum ada Pendidikan" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pendidikan_profile_RV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp" />
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>
+
