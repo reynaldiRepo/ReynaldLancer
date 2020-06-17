@@ -125,7 +125,7 @@
                 android:id="@+id/register_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Sign In"
+                android:text=" Register"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
