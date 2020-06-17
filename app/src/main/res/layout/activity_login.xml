@@ -78,7 +78,8 @@
             android:hint="Email Anda"
             android:inputType="textEmailAddress"
             android:padding="6dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textCursorDrawable="@null"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -97,7 +98,8 @@
             android:hint="Password Anda"
             android:inputType="textPassword"
             android:padding="6dp"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textCursorDrawable="@null"/>
 
         <Button
             android:id="@+id/btn_login"

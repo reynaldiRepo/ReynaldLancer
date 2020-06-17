@@ -49,7 +49,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Silahkan masuk ke Akun Anda"
+                android:text="#BereskanSemua"
                 android:textColor="@color/colorAccent"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -82,7 +82,8 @@
                 android:hint="Email Anda"
                 android:inputType="textEmailAddress"
                 android:padding="6dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textCursorDrawable="@null"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -101,7 +102,8 @@
                 android:hint="Nama Anda"
                 android:inputType="text"
                 android:padding="6dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textCursorDrawable="@null"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -120,7 +122,8 @@
                 android:hint="Nomor Anda"
                 android:inputType="number"
                 android:padding="6dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textCursorDrawable="@null"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -139,7 +142,8 @@
                 android:hint="Password Anda"
                 android:inputType="textPassword"
                 android:padding="6dp"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textCursorDrawable="@null"/>
 
             <Button
                 android:id="@+id/btn_register"
