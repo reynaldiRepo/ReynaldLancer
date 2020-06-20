@@ -80,7 +80,7 @@
                 android:layout_margin="12dp"
                 android:background="@drawable/rounded_stroke"
                 android:hint="Email Anda"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:padding="6dp"
                 android:textSize="20dp"
                 android:textCursorDrawable="@null"/>
