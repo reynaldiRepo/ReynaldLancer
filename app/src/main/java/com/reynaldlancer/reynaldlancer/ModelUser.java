@@ -15,6 +15,19 @@ public class ModelUser {
     Double ratting = 0.0;
     @SerializedName("saldo")
     Integer saldo = 0;
+    @SerializedName("photo_profile")
+    String photo_profile = "default.png";
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    @SerializedName("status")
+    Boolean status;
 
     public String getNama() {
         return nama;
@@ -62,6 +75,14 @@ public class ModelUser {
 
     public void setSaldo(Integer saldo) {
         this.saldo = saldo;
+    }
+
+    public String getPhoto_profile() {
+        return photo_profile;
+    }
+
+    public void setPhoto_profile(String photo_profile) {
+        this.photo_profile = photo_profile;
     }
 }
 

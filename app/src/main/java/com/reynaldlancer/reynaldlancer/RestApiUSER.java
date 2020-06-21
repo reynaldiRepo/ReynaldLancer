@@ -9,6 +9,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface RestApiUSER {
     @FormUrlEncoded
@@ -19,5 +20,17 @@ public interface RestApiUSER {
             @Field("no_telephone") String no_telephone,
             @Field("password") String  password
             );
+
+    @FormUrlEncoded
+    @POST("user/login")
+    Call<JsonObject> login (
+            @Field("_id") String _id,
+            @Field("password")String password
+    );
+
+    @GET("user/get")
+    Call<ModelUser> getUser (@Query("_id") String _id);
+
+
 
 }

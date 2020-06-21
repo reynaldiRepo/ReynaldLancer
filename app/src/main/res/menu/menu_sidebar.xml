@@ -25,4 +25,7 @@
         android:title="Tentang"
         android:id="@+id/tentang"
         android:icon="@drawable/about"/>
+    <item
+        android:title="Logout"
+        android:id="@+id/logout" />
 </menu>

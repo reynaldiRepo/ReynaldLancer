@@ -130,7 +130,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginLeft="5dp"
-                                android:text="Rp. 1.200.000,-"
+                                android:text=""
                                 android:textColor="@color/colorAccent"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
@@ -653,7 +653,6 @@
         android:layout_gravity="end"
         android:background="@color/colorPrimary"
         android:elevation="10dp"
-        app:headerLayout="@layout/headersidebar"
         app:itemIconTint="@color/colorAccent"
         app:itemTextColor="@color/colorAccent"
         app:menu="@menu/menu_sidebar" />

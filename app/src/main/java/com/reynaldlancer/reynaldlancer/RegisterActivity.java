@@ -2,8 +2,10 @@ package com.reynaldlancer.reynaldlancer;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +27,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     TextView link_to_login;
     EditText ET_nama, ET_email, ET_no_telephone, ET_password;
+    LoadingDialog loading;
+    FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //for login link==============================================
         link_to_login = findViewById(R.id.login_link);
-        link_to_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            }
-        });
+        link_to_login.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
         //===============================================================
 
         //register trigger
@@ -48,12 +47,11 @@ public class RegisterActivity extends AppCompatActivity {
         ET_password = findViewById(R.id.register_password_EditText);
 
         Button RegisterBTN = findViewById(R.id.btn_register);
-        RegisterBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                register();
-            }
-        });
+        RegisterBTN.setOnClickListener(v -> register());
+
+        //inisilaisasi loading dialog
+        fm = getSupportFragmentManager();
+        loading = new LoadingDialog();
     }
 
     private void register() {
@@ -61,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
         EDValidation validator = new EDValidation();
         if (validator.required(ET_nama) && validator.required(ET_no_telephone)
                 && validator.input_password(ET_password, 8) && validator.email_validate(ET_email)) {
+            //panggil loading
+            loading.show(fm, "show Loading");
             //make post
             RestApiUSER user = RetrofitClient.getRetrofitInstance().create(RestApiUSER.class);
             Call<JsonObject> call = user.register(
@@ -73,8 +73,17 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                     if(response.isSuccessful()){
+                        loading.dismiss();
                         Toast.makeText(RegisterActivity.this, response.body().get("status").getAsString(), Toast.LENGTH_SHORT).show();
                         boolean status = response.body().get("status").getAsBoolean();
+                        if (status){
+                            SessionController session = new SessionController();
+                            session.addSession(RegisterActivity.this, ET_email.getText().toString());
+                            startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                            finish();
+                        }else{
+                            Toast.makeText(RegisterActivity.this, "Email sudah digunakan", Toast.LENGTH_SHORT).show();
+                        }
                     }else {
                         Toast.makeText(RegisterActivity.this, "Something Wrong", Toast.LENGTH_SHORT).show();
                     }
@@ -90,5 +99,11 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Input Error", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 }
