@@ -1,10 +1,19 @@
 package com.reynaldlancer.reynaldlancer;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
@@ -14,22 +23,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ViewFlipper;
-
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,10 +42,13 @@ public class HomeFragment extends Fragment {
     private ViewFlipper promo_layout;
     private RecyclerView RV_tugas;
     private RecyclerView RV_misi;
+    private RecyclerView RV_poster;
     private RecyclerView RV_academy;
     private Button tambah_saldo, tarik_saldo;
     private LinearLayout posting_tugas;
     private LinearLayout posting_poster;
+    private LinearLayout posting_misi;
+    private TextView jumlah_saldo;
 
     private String User;
 
@@ -80,55 +77,22 @@ public class HomeFragment extends Fragment {
         promo_layout = v.findViewById(R.id.promo);
         RV_tugas = v.findViewById(R.id.tugas_rv);
         RV_misi = v.findViewById(R.id.misi_rv);
-        RecyclerView RV_poster = v.findViewById(R.id.poster_rv);
+        RV_poster = v.findViewById(R.id.poster_rv);
         RV_academy = v.findViewById(R.id.heroac_rv);
         tambah_saldo = v.findViewById(R.id.tambah_saldo);
         tarik_saldo = v.findViewById(R.id.tarik_saldo);
         posting_tugas = v.findViewById(R.id.posting_tugas);
-        LinearLayout posting_misi = v.findViewById(R.id.posting_misi);
+        posting_misi = v.findViewById(R.id.posting_misi);
         posting_poster = v.findViewById(R.id.posting_poster);
+        jumlah_saldo = v.findViewById(R.id.saldo_text);
 
 
-        //loading data
-        LoadingDialog loading = new LoadingDialog();//for loading dialog
-        loading.show(getChildFragmentManager(), "Loading");
         //get user active
         SessionController session = new SessionController();
         User = session.getActiveUser(getActivity());
 
         //load user data
-        Call<ModelUser> getUser = user_api.getUser(
-                User
-        );
-        getUser.enqueue(new Callback<ModelUser>() {
-            @Override
-            public void onResponse(Call<ModelUser> call, Response<ModelUser> response) {
-                if(response.isSuccessful()){
-                    Log.d("Get Data User", "sukses get data user"+response.body().toString());
-                    modelUser = response.body();
-
-                    //put saldo from model to view
-                    TextView jumlah_saldo = v.findViewById(R.id.saldo_text);
-                    jumlah_saldo.setText(formater.toCurrency(modelUser.getSaldo().toString()));
-
-                    //dismiss loading dialog
-                    loading.dismiss();
-                }
-            }
-            @Override
-            public void onFailure(Call<ModelUser> call, Throwable t) {
-                Log.e("Fail Get User Home", t.getMessage(),t );
-            }
-        });
-
-
-
-
-
-
-
-
-
+        loadData();
 
         //for images promo
         int image[] = {R.mipmap.slide1, R.mipmap.slide2, R.mipmap.slide3};
@@ -280,5 +244,35 @@ public class HomeFragment extends Fragment {
         promo_layout.setOutAnimation(getActivity(), android.R.anim.slide_out_right);
 
     }
+
+    private void loadData() {
+        //loading data
+        LoadingDialog loading = new LoadingDialog();//for loading dialog
+        loading.show(getChildFragmentManager(), "Loading");
+        Call<ModelUser> getUser = user_api.getUser(
+                User
+        );
+        getUser.enqueue(new Callback<ModelUser>() {
+            @Override
+            public void onResponse(Call<ModelUser> call, Response<ModelUser> response) {
+                if (response.isSuccessful()) {
+                    Log.d("Get Data User", "sukses get data user" + response.body().toString());
+                    modelUser = response.body();
+
+                    //put saldo from model to view
+                    jumlah_saldo.setText(formater.toCurrency(modelUser.getSaldo().toString()));
+
+                    //dismiss loading dialog
+                    loading.dismiss();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelUser> call, Throwable t) {
+                Log.e("Fail Get User Home", t.getMessage(), t);
+            }
+        });
+    }
+
 
 }

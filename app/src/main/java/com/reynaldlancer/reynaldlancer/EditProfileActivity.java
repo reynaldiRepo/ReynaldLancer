@@ -1,14 +1,21 @@
 package com.reynaldlancer.reynaldlancer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,9 +41,16 @@ public class EditProfileActivity extends AppCompatActivity {
     RadioGroup gender_rb_Group;
     RadioButton male_rb, female_rb;
     TextView email;
+    Button upload_image_btn;
 
     //firebaseHelper
     FirebaseHelper firebaseHelper = new FirebaseHelper();
+
+    //for image upload
+    private final int PICK_IMAGE_REQUEST = 71;
+
+    //loading dialog
+    LoadingDialog loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,37 +69,25 @@ public class EditProfileActivity extends AppCompatActivity {
         email = findViewById(R.id.ET_profile_email_edit);
 
 
-
         //get_session
         session = new SessionController();
         User = session.getActiveUser(EditProfileActivity.this);
 
         //load user data
-        LoadingDialog loading = new LoadingDialog();
+        loading = new LoadingDialog();
         loading.show(getSupportFragmentManager(), "loading");
         user_api = RetrofitClient.getRetrofitInstance().create(RestApiUSER.class);
         Call<ModelUser> get_user = user_api.getUser(User);
         get_user.enqueue(new Callback<ModelUser>() {
             @Override
             public void onResponse(Call<ModelUser> call, Response<ModelUser> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     modelUser = response.body();
                     //adding to editText and form
-                    firebaseHelper.load_iamge(firebaseHelper.getPhotoProfileDir(), modelUser.getPhoto_profile(),photoProfile );
-                    email.setText(modelUser.get_id());
-                    edit_nama.setText(modelUser.getNama());
-                    edit_alamat.setText(modelUser.getAlamat());
-                    edit_no_telp.setText(modelUser.getNo_telephone());
-                    edit_info.setText(modelUser.getInfo_tambahan());
-                    if (modelUser.getGender() == "L"){
-                        male_rb.setChecked(true);
-                    }else{
-                        female_rb.setChecked(true);
-                    }
+                    loadData(modelUser);
                     loading.dismiss();
                 }
             }
-
             @Override
             public void onFailure(Call<ModelUser> call, Throwable t) {
                 Toast.makeText(EditProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -93,6 +95,68 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
 
+        //for image_upload
+        upload_image_btn = findViewById(R.id.uploade_image_profile_btn);
+        upload_image_btn.setOnClickListener(v -> {
+            chooseImage();
+        });
+
 
     }
+
+    private void chooseImage() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //upload image
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null
+                && data.getData() != null) {
+            Uri filepath = data.getData();
+            //place on image view
+            Glide.with(this).load(filepath).centerCrop().into(photoProfile);
+
+            //upload to database
+            loading.show(getSupportFragmentManager(), "loading");
+            user_api.update_photo_profire(User, User + "image_profile").enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    //upload to firebase
+                    firebaseHelper.uploadImage(filepath, firebaseHelper.getPhotoProfileDir(),
+                            User + "image_profile", EditProfileActivity.this, getSupportFragmentManager());
+                    loading.dismiss();
+                    Toast.makeText(EditProfileActivity.this, "Success Update", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    Toast.makeText(EditProfileActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
+                    loading.dismiss();
+                }
+            });
+        } else {
+            Toast.makeText(this, "No Image Selected", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void loadData(ModelUser modelUser){
+        firebaseHelper.load_iamge(EditProfileActivity.this, firebaseHelper.getPhotoProfileDir(), modelUser.getPhoto_profile(), photoProfile);
+        email.setText(modelUser.get_id());
+        edit_nama.setText(modelUser.getNama());
+        edit_alamat.setText(modelUser.getAlamat());
+        edit_no_telp.setText(modelUser.getNo_telephone());
+        edit_info.setText(modelUser.getInfo_tambahan());
+        if (modelUser.getGender() == "L") {
+            male_rb.setChecked(true);
+        } else {
+            female_rb.setChecked(true);
+        }
+    }
+
 }

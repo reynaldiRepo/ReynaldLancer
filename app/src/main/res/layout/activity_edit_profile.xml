@@ -64,7 +64,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="-50dp"
                 android:layout_toRightOf="@+id/image_profile_preview_edit"
-                android:background="@drawable/camera" />
+                android:background="@drawable/camera"
+                android:id="@+id/uploade_image_profile_btn"/>
 
             <TextView
                 android:layout_width="wrap_content"

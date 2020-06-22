@@ -31,6 +31,8 @@ public interface RestApiUSER {
     @GET("user/get")
     Call<ModelUser> getUser (@Query("_id") String _id);
 
-
+    @FormUrlEncoded
+    @POST("user/update")
+    Call<JsonObject> update_photo_profire(@Field("_id") String _id, @Field("photo_profile") String filename);
 
 }

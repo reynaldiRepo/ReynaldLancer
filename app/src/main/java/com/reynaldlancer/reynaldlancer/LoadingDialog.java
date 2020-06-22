@@ -18,6 +18,7 @@ public class LoadingDialog extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = requireActivity().getLayoutInflater();
+        setCancelable(false);
         DialogLayout = inflater.inflate(R.layout.dialog_loading, null);
         dialog.setView(DialogLayout);
         return dialog.create();

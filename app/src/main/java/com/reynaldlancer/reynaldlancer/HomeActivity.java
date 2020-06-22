@@ -1,16 +1,13 @@
 package com.reynaldlancer.reynaldlancer;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import android.nfc.Tag;
-import android.os.Bundle;
-import android.util.Log;
-
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
-
-import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
 
