@@ -17,6 +17,36 @@ public class ModelUser {
     Integer saldo = 0;
     @SerializedName("photo_profile")
     String photo_profile = "default.png";
+    @SerializedName("gender")
+    String gender = "L";
+    @SerializedName("info_tambahan")
+    String info_tambahan;
+    @SerializedName("domisili")
+    String domisili;
+
+    public String getDomisili() {
+        return domisili;
+    }
+
+    public void setDomisili(String domisili) {
+        this.domisili = domisili;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getInfo_tambahan() {
+        return info_tambahan;
+    }
+
+    public void setInfo_tambahan(String info_tambahan) {
+        this.info_tambahan = info_tambahan;
+    }
 
     public Boolean getStatus() {
         return status;

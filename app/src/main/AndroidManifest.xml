@@ -15,7 +15,8 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".BuatPosterActivity" />
         <activity

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "633384592196",
+    "firebase_url": "https://reynaldlancer.firebaseio.com",
+    "project_id": "reynaldlancer",
+    "storage_bucket": "reynaldlancer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633384592196:android:3e37158d00132691bfad11",
+        "android_client_info": {
+          "package_name": "com.reynaldlancer.reynaldlancer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633384592196-9ekgoignf9q6cg77brok07bja2bk2le3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reynaldlancer.reynaldlancer",
+            "certificate_hash": "8632989bddad412f053800258f45c4308fc3eaea"
+          }
+        },
+        {
+          "client_id": "633384592196-amjsesi6cim71ch1t6ddh50jm6mikkts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANdpQJsVlyys9dgyl-BG3FJYrT9iUphsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633384592196-amjsesi6cim71ch1t6ddh50jm6mikkts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

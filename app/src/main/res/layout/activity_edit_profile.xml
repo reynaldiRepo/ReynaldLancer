@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:orientation="vertical"
+    tools:context=".EditProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/nav_back_profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="12dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_toRightOf="@+id/nav_back_profile"
+            android:text="Profile"
+            android:textColor="@color/colorAccent"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="12dp"
+        android:background="@mipmap/background_profile"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="multiply">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="0dp"
+            android:padding="12dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_profile_preview_edit"
+                android:layout_width="122dp"
+                android:layout_height="122dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="3dp"
+                android:src="@color/colorAccent" />
+
+            <Button
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="-50dp"
+                android:layout_toRightOf="@+id/image_profile_preview_edit"
+                android:background="@drawable/camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:text="#EDIT_PROFILE"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Nama"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ET_profile_nama_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_stroke"
+                android:hint=" Nama"
+                android:padding="4dp"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Email"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ET_profile_email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_stroke"
+                android:textSize="20dp"
+                android:text="email"
+                android:inputType="none"
+                android:padding="7dp"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Nomor Telephone"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ET_profile_no_telephone_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_stroke"
+                android:hint=" No telephone"
+                android:inputType="number"
+                android:padding="4dp"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Domisili"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ET_profile_domisili_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_stroke"
+                android:text=" Domisili"
+                android:padding="7dp"
+                android:textSize="20dp"
+                android:textCursorDrawable="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Alamat"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ET_profile_alamat_edit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/rounded_stroke"
+                android:hint=" Alamat"
+                android:padding="4dp"
+                android:textCursorDrawable="@null" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Gender"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <RadioGroup
+                android:id="@+id/gender_edit_rb_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorPrimary"
+                    android:checked="true"
+                    android:text="Laki - Laki"
+                    android:textSize="18dp" />
+                <RadioButton
+                    android:id="@+id/female_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:buttonTint="@color/colorPrimary"
+                    android:text="Perempuan"
+                    android:textSize="18dp" />
+            </RadioGroup>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Informasi Tambahan"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/input_deskripsi_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/rounded_stroke"
+                android:gravity="top"
+                android:hint="Info Tambahan"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:maxLength="100"
+                android:maxLines="10"
+                android:minLines="8"
+                android:padding="12dp"
+                android:scrollbars="vertical" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedorange"
+                android:text="SIMPAN"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:id="@+id/save_profle_btn"
+                android:layout_marginBottom="20dp">
+            </Button>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
