@@ -42,6 +42,7 @@ public class EditProfileActivity extends AppCompatActivity {
     RadioButton male_rb, female_rb;
     TextView email;
     Button upload_image_btn;
+    TextView domisili;
 
     //firebaseHelper
     FirebaseHelper firebaseHelper = new FirebaseHelper();
@@ -51,6 +52,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     //loading dialog
     LoadingDialog loading;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class EditProfileActivity extends AppCompatActivity {
         male_rb = findViewById(R.id.rb_male);
         female_rb = findViewById(R.id.rb_male);
         email = findViewById(R.id.ET_profile_email_edit);
+        domisili = findViewById(R.id.ET_profile_domisili_edit);
 
 
         //get_session
@@ -99,6 +102,12 @@ public class EditProfileActivity extends AppCompatActivity {
         upload_image_btn = findViewById(R.id.uploade_image_profile_btn);
         upload_image_btn.setOnClickListener(v -> {
             chooseImage();
+        });
+
+        //for domisili
+        domisili.setOnClickListener(v->{
+            DialogChooseDomisili dialogChooseDomisili = new DialogChooseDomisili(domisili);
+            dialogChooseDomisili.show(getSupportFragmentManager(), "domisili");
         });
 
 
