@@ -24,21 +24,21 @@ public interface RestApiUSER {
     );
 
     @FormUrlEncoded
-    @POST("user/login")
+    @POST("/user/login")
     Call<JsonObject> login(
             @Field("_id") String _id,
             @Field("password") String password
     );
 
-    @GET("user/get")
+    @GET("/user/get")
     Call<ModelUser> getUser(@Query("_id") String _id);
 
     @FormUrlEncoded
-    @POST("user/update")
+    @POST("/user/update")
     Call<JsonObject> update_photo_profire(@Field("_id") String _id, @Field("photo_profile") String filename);
 
     @FormUrlEncoded
-    @POST("user/update")
+    @POST("/user/update")
     Call<JsonObject> update_profire(@Field("_id") String _id,
                                     @Field("nama") String nama,
                                     @Field("alamat") String alamat,
@@ -48,10 +48,8 @@ public interface RestApiUSER {
                                     @Field("domisili") String domisili
     );
 
-    @GET("user/skill")
-    Call<ArrayList<ModelUserSkill>> get_user_skill(
-            @Query("user_id") String user_id
-    );
+    @GET("/user/skill")
+    Call<ArrayList<ModelUserSkill>> get_user_skill(@Query("user_id") String user);
 
     @FormUrlEncoded
     @POST("/user/del_skill")

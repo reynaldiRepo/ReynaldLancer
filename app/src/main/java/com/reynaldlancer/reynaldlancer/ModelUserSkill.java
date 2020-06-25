@@ -34,9 +34,6 @@ public class ModelUserSkill {
         this.user_id = user_id;
     }
 
-    public ModelUserSkill(String _id, String skill, String user_id) {
-        this._id = _id;
-        this.skill = skill;
-        this.user_id = user_id;
-    }
+
+
 }

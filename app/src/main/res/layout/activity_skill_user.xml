@@ -38,7 +38,8 @@
         android:layout_height="wrap_content"
         android:text="PILIH KEAHLIAN"
         android:background="@drawable/greyrounded"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp"
+        android:id="@+id/add_skill_btn"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

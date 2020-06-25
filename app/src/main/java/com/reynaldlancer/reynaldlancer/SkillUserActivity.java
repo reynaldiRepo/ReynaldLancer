@@ -18,14 +18,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SkillUserActivity extends AppCompatActivity implements  onDeleteUserSkill {
+public class SkillUserActivity extends AppCompatActivity implements onDeleteUserSkill, onAddSkillFromDialog{
 
 
     //for back
     ImageView nav_back;
 
     //rest api USER
-    RestApiUSER user_api = RetrofitClient.getRetrofitInstance().create(RestApiUSER.class);
+    RestApiUSER user_api;
 
     //User
     String User;
@@ -35,16 +35,24 @@ public class SkillUserActivity extends AppCompatActivity implements  onDeleteUse
     LoadingDialog loading;
 
     //for skil model arraylist
-    ArrayList<ModelUserSkill> modelUserSkills = new ArrayList<ModelUserSkill>() ;
+    ArrayList<ModelUserSkill> modelUserSkills = new ArrayList<ModelUserSkill>();
     RvSkillUserAdapter rvSkillUserAdapter;
 
     //dialog for add skill;
+    DialogAddSkill dialogAddSkill;
+
+    //button to add skill
+    Button add_skilButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_user);
+
+        //load user data
+        SessionController sessionController = new SessionController();
+        User = sessionController.getActiveUser(SkillUserActivity.this);
 
         //for loading
         loading = new LoadingDialog();
@@ -61,28 +69,36 @@ public class SkillUserActivity extends AppCompatActivity implements  onDeleteUse
         RV_SKILL.setLayoutManager(tugaslayoutManager);
         RV_SKILL.setItemAnimator(new DefaultItemAnimator());
         rvSkillUserAdapter = new RvSkillUserAdapter(modelUserSkills, SkillUserActivity.this, this);
+        RV_SKILL.setAdapter(rvSkillUserAdapter);
+
+        user_api = RetrofitClient.getRetrofitInstance().create(RestApiUSER.class);
         load_data();
 
-        //load user data
-        SessionController sessionController = new SessionController();
-        User = sessionController.getActiveUser(SkillUserActivity.this);
+
+        //add skill
+        add_skilButton = findViewById(R.id.add_skill_btn);
+        add_skilButton.setOnClickListener(v -> {
+            dialogAddSkill.show(getSupportFragmentManager(), "add_skill");
+        });
+
 
     }
 
-    private void load_data(){
+    private void load_data() {
         loading.show(getSupportFragmentManager(), "load");
         Call<ArrayList<ModelUserSkill>> get_skill = user_api.get_user_skill(User);
         get_skill.enqueue(new Callback<ArrayList<ModelUserSkill>>() {
             @Override
             public void onResponse(Call<ArrayList<ModelUserSkill>> call, Response<ArrayList<ModelUserSkill>> response) {
                 if (response.isSuccessful()) {
+                    modelUserSkills.clear();
                     modelUserSkills = response.body();
-                    rvSkillUserAdapter.SkillModels.clear();
-                    rvSkillUserAdapter.notifyItemRangeRemoved(0,0);
+                    rvSkillUserAdapter.notifyItemRangeRemoved(0, 0);
                     rvSkillUserAdapter.setSkillModels(modelUserSkills);
                     rvSkillUserAdapter.notifyDataSetChanged();
                     loading.dismiss();
-                }else{
+                    dialogAddSkill = new DialogAddSkill(ConvertArrayListSkillToArrayListString(response.body()), SkillUserActivity.this);
+                } else {
                     loading.dismiss();
                     Toast.makeText(SkillUserActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
@@ -96,18 +112,18 @@ public class SkillUserActivity extends AppCompatActivity implements  onDeleteUse
         });
     }
 
-    private void delete_skill(String _id, int pos){
+    private void delete_skill(String _id, int pos) {
         loading.show(getSupportFragmentManager(), "load");
         Call<JsonObject> del_skill = user_api.del_user_skill(_id);
         del_skill.enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                if(response.body().get("status").getAsBoolean()){
+                if (response.body().get("status").getAsBoolean()) {
                     Toast.makeText(SkillUserActivity.this, "Delete Success", Toast.LENGTH_SHORT).show();
                     modelUserSkills.remove(pos);
                     rvSkillUserAdapter.setSkillModels(modelUserSkills);
                     rvSkillUserAdapter.notifyItemRemoved(pos);
-                }else{
+                } else {
                     Toast.makeText(SkillUserActivity.this, "Delete Failed", Toast.LENGTH_SHORT).show();
                 }
                 loading.dismiss();
@@ -125,5 +141,18 @@ public class SkillUserActivity extends AppCompatActivity implements  onDeleteUse
     @Override
     public void onDeleteBtnClick(String _id, int pos) {
         delete_skill(_id, pos);
+    }
+
+    private ArrayList<String> ConvertArrayListSkillToArrayListString(ArrayList<ModelUserSkill> modelUserSkills1) {
+        ArrayList<String> res = new ArrayList<String>();
+        for (ModelUserSkill m : modelUserSkills1) {
+            res.add(m.getSkill());
+        }
+        return res;
+    }
+
+    @Override
+    public void DataFromDialogToActivity(ArrayList<String> result) {
+        Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show();
     }
 }

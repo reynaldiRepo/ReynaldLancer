@@ -9,7 +9,6 @@
         android:background="@color/colorPrimary"
         android:padding="12dp"
         >
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,17 +16,52 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/colorAccent" />
-
         <Button
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:background="@drawable/ic_cancel_black_24dp"
             android:layout_alignParentEnd="true"
-            android:layout_centerHorizontal="true" />
-
-
-
+            android:layout_centerHorizontal="true"
+            android:id="@+id/close_dialog_skill"/>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:padding="6dp"
+        >
+
+        <Button
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/arrow_back"
+            android:id="@+id/back_state_choose_skill_btn"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pilih Kategori Skill"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:id="@+id/state_choose_skill_TV"
+            android:layout_toRightOf="@id/back_state_choose_skill_btn"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"/>
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/skill_category"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:id="@+id/skill_item_detail"/>
 
 
 </LinearLayout>
