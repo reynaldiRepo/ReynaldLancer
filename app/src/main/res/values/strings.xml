@@ -58,4 +58,93 @@
     </string>
     <string name="msg_buat_tugas">Fitur tugas hanya untuk mencari bantuan, feedback tidak diperuntukan untuk erjualan,pengguna yang melanggar ketentuan diblok secara permanen</string>
     <string name="misi_msg">Fitur misi digunakan untuk mencari orang yang dapat membantu dengan bayaran komisi per satuan item</string>
+    <string-array name="jenis_keahlian">
+        <item>Computer dan Teknologi</item>
+        <item>Desain dan Advertaising</item>
+        <item>Manajemen Bisnis</item>
+    </string-array>
+    <string-array name="comp_skill">
+        <item>.NET</item>
+        <item>AWS</item>
+        <item>Android</item>
+        <item>Angular.js</item>
+        <item>Angular.js</item>
+        <item>Apple Xcode</item>
+        <item>Apple Xcode</item>
+        <item>Azure</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+        <item>Cake PHP</item>
+        <item>Code Igniter</item>
+        <item>Circle CI</item>
+        <item>COBOL</item>
+        <item>Django</item>
+        <item>Ember.js</item>
+        <item>Facebook API</item>
+        <item>Flask</item>
+        <item>FLutter</item>
+        <item>GIT</item>
+        <item>Google Firebase</item>
+        <item>HTML</item>
+        <item>Internet Scurity</item>
+        <item>JAVA</item>
+        <item>Javascript</item>
+        <item>Jquery</item>
+        <item>Kendo.js</item>
+        <item>Kinect</item>
+        <item>Laravel</item>
+        <item>Linux</item>
+        <item>Machine learning</item>
+        <item>Mobile Dev</item>
+        <item>Node.js</item>
+        <item>PHP</item>
+        <item>Python</item>
+        <item>Ruby</item>
+        <item>Web Development</item>
+    </string-array>
+
+    <string-array name="desain_skill">
+        <item>3D Desain</item>
+        <item>Logo Design</item>
+        <item>Laterring</item>
+        <item>Editting Video</item>
+        <item>Adobe inDesigne</item>
+        <item>Adobe illustrator</item>
+        <item>Adobe photoshop</item>
+        <item>Adobe XD</item>
+        <item>Adobe After Effect</item>
+        <item>Adobe Premiere</item>
+        <item>Design</item>
+        <item>Fashion</item>
+        <item>Illustrator</item>
+        <item>Vector</item>
+        <item>Branding Desain</item>
+        <item>Branding Identitiy</item>
+        <item>Blender</item>
+        <item>Sculpting</item>
+        <item>Architect</item>
+    </string-array>
+
+    <string-array name="bussines_skill">
+        <item>Accounting</item>
+        <item>Advertising</item>
+        <item>Marketing</item>
+        <item>B2B Sales</item>
+        <item>Canvasing</item>
+        <item>Accounting</item>
+        <item>Gove Sales</item>
+        <item>Sales Marketing</item>
+        <item>Media Sales</item>
+        <item>Digital Marketing</item>
+        <item>Brand Manajemen</item>
+        <item>Product Branding</item>
+        <item>CRM</item>
+        <item>Telemarketing</item>
+        <item>Businness Aanalytics</item>
+        <item>Businness Strategy</item>
+        <item>Businness Foundraising</item>
+        <item>Customer Strategy</item>
+    </string-array>
+
 </resources>

@@ -43,6 +43,8 @@ public class EditProfileActivity extends AppCompatActivity {
     TextView email;
     Button upload_image_btn;
     TextView domisili;
+    Button save_button;
+
 
     //firebaseHelper
     FirebaseHelper firebaseHelper = new FirebaseHelper();
@@ -53,6 +55,7 @@ public class EditProfileActivity extends AppCompatActivity {
     //loading dialog
     LoadingDialog loading;
 
+    String Gender = "L";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,19 @@ public class EditProfileActivity extends AppCompatActivity {
         female_rb = findViewById(R.id.rb_male);
         email = findViewById(R.id.ET_profile_email_edit);
         domisili = findViewById(R.id.ET_profile_domisili_edit);
+        save_button = findViewById(R.id.save_profle_btn);
+
+
+        //save button for upload
+        save_button.setOnClickListener(v -> {
+            save_data();
+        });
+
+        //backnav
+        ImageView navback = findViewById(R.id.nav_back_profile);
+        navback.setOnClickListener(v -> {
+            onBackPressed();
+        });
 
 
         //get_session
@@ -91,6 +107,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     loading.dismiss();
                 }
             }
+
             @Override
             public void onFailure(Call<ModelUser> call, Throwable t) {
                 Toast.makeText(EditProfileActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
@@ -105,7 +122,7 @@ public class EditProfileActivity extends AppCompatActivity {
         });
 
         //for domisili
-        domisili.setOnClickListener(v->{
+        domisili.setOnClickListener(v -> {
             DialogChooseDomisili dialogChooseDomisili = new DialogChooseDomisili(domisili);
             dialogChooseDomisili.show(getSupportFragmentManager(), "domisili");
         });
@@ -154,7 +171,7 @@ public class EditProfileActivity extends AppCompatActivity {
         }
     }
 
-    private void loadData(ModelUser modelUser){
+    private void loadData(ModelUser modelUser) {
         firebaseHelper.load_iamge(EditProfileActivity.this, firebaseHelper.getPhotoProfileDir(), modelUser.getPhoto_profile(), photoProfile);
         email.setText(modelUser.get_id());
         edit_nama.setText(modelUser.getNama());
@@ -167,5 +184,57 @@ public class EditProfileActivity extends AppCompatActivity {
             female_rb.setChecked(true);
         }
     }
+
+
+    private void save_data() {
+        EDValidation valid = new EDValidation();
+        if (valid.required(edit_nama)) {
+            gender_rb_Group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    if (checkedId == R.id.rb_male) {
+                        Gender = "L";
+                    } else {
+                        Gender = "R";
+                    }
+                }
+            });
+            Call<JsonObject> save_profile = user_api.update_profire(
+                    User,
+                    edit_nama.getText().toString(),
+                    edit_alamat.getText().toString(),
+                    edit_no_telp.getText().toString(),
+                    Gender,
+                    edit_info.getText().toString(),
+                    domisili.getText().toString()
+            );
+            loading.show(getSupportFragmentManager(), "load");
+            save_profile.enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    if (response.isSuccessful()) {
+                        if (response.body().get("status").getAsBoolean()) {
+                            Toast.makeText(EditProfileActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                            loading.dismiss();
+                            onBackPressed();
+                        } else {
+                            loading.dismiss();
+                            Toast.makeText(EditProfileActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        loading.dismiss();
+                        Toast.makeText(EditProfileActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    loading.dismiss();
+                    Toast.makeText(EditProfileActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
+
 
 }

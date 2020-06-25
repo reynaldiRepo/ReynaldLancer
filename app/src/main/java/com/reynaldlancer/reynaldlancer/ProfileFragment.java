@@ -31,7 +31,11 @@ public class ProfileFragment extends Fragment {
     //profile komponen
     TextView nama, saldo;
     ImageView photo_profile;
+
+
+    //button for edit
     Button edit_profile_btn;
+    ImageView edit_skill, edit_pendidikan, edit_sosmed;
 
     //user id
     String User;
@@ -58,6 +62,14 @@ public class ProfileFragment extends Fragment {
         edit_profile_btn.setOnClickListener(view -> {
             startActivity(new Intent(getActivity(), EditProfileActivity.class));
         });
+
+        //for button to edit
+        edit_skill = v.findViewById(R.id.edit_skill);
+        edit_pendidikan = v.findViewById(R.id.edit_pendidikan);
+        edit_sosmed = v.findViewById(R.id.edit_sosmed);
+
+        //assing to edit activity
+        edit_skill.setOnClickListener(view->{startActivity(new Intent(getActivity(), SkillUserActivity.class));});
 
         //get active user
         SessionController session = new SessionController();

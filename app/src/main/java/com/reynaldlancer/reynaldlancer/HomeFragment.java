@@ -270,6 +270,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<ModelUser> call, Throwable t) {
                 Log.e("Fail Get User Home", t.getMessage(), t);
+                loading.dismiss();
             }
         });
     }
