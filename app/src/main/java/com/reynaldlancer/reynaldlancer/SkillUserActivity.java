@@ -153,6 +153,39 @@ public class SkillUserActivity extends AppCompatActivity implements onDeleteUser
 
     @Override
     public void DataFromDialogToActivity(ArrayList<String> result) {
-        Toast.makeText(this, result.toString(), Toast.LENGTH_SHORT).show();
+        addSkill(result);
+    }
+
+    private void addSkill(ArrayList<String> data){
+        loading.show(getSupportFragmentManager(), "load");
+        String dataStr = "";
+        for (int i = 0 ; i < data.size(); i++ ){
+            if (i != data.size()-1) {
+                dataStr += data.get(i) + ",";
+            }else{
+                dataStr += data.get(i);
+            }
+        }
+
+        Call <JsonObject> add_user = user_api.add_user_skill(dataStr, User);
+        add_user.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                if(response.isSuccessful()){
+                    loading.dismiss();
+                    Toast.makeText(SkillUserActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    load_data();
+                }else{
+                    loading.dismiss();
+                    Toast.makeText(SkillUserActivity.this, "failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                loading.dismiss();
+                Toast.makeText(SkillUserActivity.this, "failed", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

@@ -147,4 +147,12 @@
         <item>Customer Strategy</item>
     </string-array>
 
+    <string-array name="sosmed_type">
+        <item>Instagram</item>
+        <item>Facebook</item>
+        <item>LinkedIn</item>
+        <item>Tweeter</item>
+        <item>Weebsite</item>
+    </string-array>
+
 </resources>

@@ -70,7 +70,8 @@ public class ProfileFragment extends Fragment {
 
         //assing to edit activity
         edit_skill.setOnClickListener(view->{startActivity(new Intent(getActivity(), SkillUserActivity.class));});
-
+        //adding to sosmed activity
+        edit_sosmed.setOnClickListener(v1 -> {startActivity(new Intent(getActivity(), AddingSosmedActivity.class));});
         //get active user
         SessionController session = new SessionController();
         User = session.getActiveUser(getActivity());

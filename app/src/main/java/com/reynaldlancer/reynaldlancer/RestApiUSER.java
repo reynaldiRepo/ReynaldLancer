@@ -1,6 +1,7 @@
 package com.reynaldlancer.reynaldlancer;
 
 import com.google.gson.JsonObject;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
@@ -48,11 +49,33 @@ public interface RestApiUSER {
                                     @Field("domisili") String domisili
     );
 
+    @FormUrlEncoded
+    @POST("user/add_skill")
+    Call<JsonObject> add_user_skill(@Field("data") String data,
+                                               @Field("user_id") String user_id);
+
     @GET("/user/skill")
     Call<ArrayList<ModelUserSkill>> get_user_skill(@Query("user_id") String user);
 
     @FormUrlEncoded
     @POST("/user/del_skill")
     Call<JsonObject> del_user_skill(@Field("_id") String _id);
+
+    @GET("/user/sosmed")
+    Call<ArrayList<ModelSosmed>> get_user_sosmed(@Query("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("/user/add_sosmed")
+    Call<JsonObject> add_user_sosmed(@Field("user_id") String user_id,
+                                     @Field("sosmed_type") String sosmed_type,
+                                     @Field("link_sosmed") String link_sosmed);
+
+    @FormUrlEncoded
+    @POST("/user/del_sosmed")
+    Call<JsonObject> del_user_sosmed(@Field("_id") String _id);
+
+    @FormUrlEncoded
+    @POST("user/update_sosmed")
+    Call <JsonObject> update_user_sosmed(@Field("_id") String _id, @Field("link") String link);
 
 }

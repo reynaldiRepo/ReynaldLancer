@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,6 +26,7 @@ public class RvSkillAdapter extends RecyclerView.Adapter<RvSkillAdapter.ViewHold
         this.modelUserSkills = modelUserSkills;
         this.modelUserSkillsFromUser = modelUserSkillsFromUser;
         this.onAddSkillInterface = onAddSkillInterface;
+//        Toast.makeText(context, modelUserSkillsFromUser.toString(), Toast.LENGTH_SHORT).show();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
