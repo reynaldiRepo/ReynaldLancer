@@ -78,4 +78,23 @@ public interface RestApiUSER {
     @POST("user/update_sosmed")
     Call <JsonObject> update_user_sosmed(@Field("_id") String _id, @Field("link") String link);
 
+
+    @GET("user/pendidikan")
+    Call <ArrayList<ModelPendidikanUser>> get_pendidikan(@Query("user_id") String user_id);
+
+    @FormUrlEncoded
+    @POST("user/add_pendidikan")
+    Call<JsonObject> add_pendidikan(@Field("user_id") String user_id,
+                                    @Field("pendidikan") String Pendidikan,
+                                    @Field("tingkat") String tingkat);
+
+    @FormUrlEncoded
+    @POST("user/update_pendidikan")
+    Call<JsonObject> update_pendidikan(@Field("_id") String _id ,@Field("pendidikan") String Pendidikan,
+                                       @Field("tingkat") String tingkat);
+
+    @FormUrlEncoded
+    @POST("user/del_pendidikan")
+    Call<JsonObject> del_pendidikan(@Field("_id") String _id);
+
 }

@@ -84,7 +84,7 @@ public class AddingSosmedActivity extends AppCompatActivity implements onItemSos
             iconTypeSosmedHas.put(s, iconArr[count]);
             count++;
         }
-        Toast.makeText(this, iconTypeSosmedHas.toString(), Toast.LENGTH_SHORT).show();
+
 //        for Spinner
         sosmed_type_spinner = findViewById(R.id.jenis_sosmed_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.sosmed_type,

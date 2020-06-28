@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottomstroke"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tingkat"/>
+    <TextView
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tingkat"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nama Institusi"/>
+    <EditText
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nama_pendidikan"
+        android:backgroundTint="@color/colorPrimary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="7dp"
+        >
+
+        <Button
+            android:layout_margin="5dp"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Update"
+            android:id="@+id/update_pendidikan_btn"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@drawable/greyrounded"/>
+        <Button
+            android:layout_margin="5dp"
+            android:layout_weight="5"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:text="Delete"
+            android:id="@+id/delete_pendidikan_btn"
+            android:textColor="@color/colorAccent"
+            android:background="@drawable/roundedorange"/>
+    </LinearLayout>
+
+</LinearLayout>

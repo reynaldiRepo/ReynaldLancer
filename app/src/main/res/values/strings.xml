@@ -155,4 +155,14 @@
         <item>Weebsite</item>
     </string-array>
 
+    <string-array name="tingkat_pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>S1 / D4</item>
+        <item>S2</item>
+        <item>S3</item>
+        <item>Kejuruan</item>
+    </string-array>
+
 </resources>

@@ -15,7 +15,8 @@
         android:roundIcon="@id/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddingSosmedActivity"></activity>
+        <activity android:name=".PendidikanUserActivity"></activity>
+        <activity android:name=".AddingSosmedActivity" />
         <activity android:name=".SkillUserActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".RegisterActivity" />

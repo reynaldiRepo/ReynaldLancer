@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PendidikanUserActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/add_pendidikan_nav_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="8dp"
+            android:onClick="backward"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_toRightOf="@+id/add_pendidikan_nav_back"
+            android:text="Data Pendidikan"
+            android:textColor="@color/colorAccent"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottomstroke"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tingkat" />
+
+        <Spinner
+            android:id="@+id/tingkat_pendidikan_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nama Institusi" />
+
+        <EditText
+            android:id="@+id/nama_pendidikan_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <Button
+                android:id="@+id/save_pendidikan_btn"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_margin="5dp"
+                android:layout_weight="5"
+                android:background="@drawable/roundedorange"
+                android:text="Save"
+                android:textColor="@color/colorAccent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Daftar Pendidikan"
+        android:layout_margin="12dp"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:id="@+id/daftar_pendidikan_user"/>
+
+</LinearLayout>
