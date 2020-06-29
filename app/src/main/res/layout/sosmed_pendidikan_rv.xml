@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottomstroke"
+    android:layout_marginBottom="6dp"
+    android:padding="12dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMA"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/tingkat_pendidikan_profile" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMA"
+        android:textStyle="normal"
+        android:textSize="20dp"
+        android:id="@+id/nama_pendidikan_profile" />
+
+
+</LinearLayout>

@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/greyrounded"
     android:orientation="vertical"
-    tools:context=".ProfileFragment">
+    tools:context=".ProfileFragment"
+    android:paddingBottom="100dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -88,7 +89,8 @@
                     android:layout_height="wrap_content"
                     android:text="Level Profil"
                     android:textAlignment="center"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorPrimaryDark"
+                    />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,14 +99,17 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="20dp"
-                    android:textStyle="bold" />
-                <LinearLayout
-                    android:id="@+id/profile_progress"
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp"
+                    android:textStyle="bold"
+                    android:id="@+id/status_progress"/>
+                <ProgressBar
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/roundedorange"
-                    android:orientation="horizontal" />
+                    android:id="@+id/progressBar_status_profile"
+                    style="@style/ProgressBarPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="25" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -189,7 +194,8 @@
                 android:layout_margin="6dp"
                 android:background="@drawable/roundedwhite_shadow"
                 android:orientation="vertical"
-                android:padding="12dp">
+                android:padding="12dp"
+                android:layout_marginBottom="200dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -215,7 +221,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/pendidikan_profile_RV"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="140dp"
                     android:padding="12dp" />
             </LinearLayout>
 
