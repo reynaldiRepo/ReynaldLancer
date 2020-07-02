@@ -10,10 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SaldoActivity extends AppCompatActivity {
 
@@ -21,6 +26,15 @@ public class SaldoActivity extends AppCompatActivity {
     TabLayout tabfaqhis;
     Button tambah_saldo, tarik_saldo;
     ImageView backward;
+    TextView saldo_tv;
+
+    //user api
+    RestApiUSER user_api;
+    String User;
+    ModelUser modelUser;
+
+    //loading
+    LoadingDialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +59,23 @@ public class SaldoActivity extends AppCompatActivity {
         tabfaqhis.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()){
-                    case 0 :
+                switch (tab.getPosition()) {
+                    case 0:
                         fragmentManager.beginTransaction().replace(R.id.saldo_faq_history_fragment, new FaqSaldoFragment()).commit();
                         break;
-                    case 1 :
+                    case 1:
                         fragmentManager.beginTransaction().replace(R.id.saldo_faq_history_fragment, new HistorySaldo()).commit();
                         break;
                 }
             }
+
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) { }
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
+
             @Override
-            public void onTabReselected(TabLayout.Tab tab) { }
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
         });
 
         tambah_saldo = findViewById(R.id.tambah_saldo_in);
@@ -77,6 +95,36 @@ public class SaldoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        //initiate saldo component
+        saldo_tv = findViewById(R.id.saldo_on_tambah_saldo);
+
+        //initiate loadingdialog
+        loadingDialog = new LoadingDialog();
+        loadingDialog.show(getSupportFragmentManager(), "load");
+        //user saldo
+        User = new SessionController().getActiveUser(this);
+        user_api = RetrofitClient.getRetrofitInstance().create(RestApiUSER.class);
+        Call<ModelUser> get_user = user_api.getUser(User);
+        get_user.enqueue(new Callback<ModelUser>() {
+            @Override
+            public void onResponse(Call<ModelUser> call, Response<ModelUser> response) {
+                if (response.isSuccessful()) {
+                    modelUser = response.body();
+                    saldo_tv.setText(new StringFormater().toCurrency(modelUser.getSaldo().toString()));
+                    loadingDialog.dismiss();
+                } else {
+                    Toast.makeText(SaldoActivity.this, "Somthing wromg", Toast.LENGTH_SHORT).show();
+                    loadingDialog.dismiss();
+                }
+            }
+            @Override
+            public void onFailure(Call<ModelUser> call, Throwable t) {
+                Toast.makeText(SaldoActivity.this, "Somthing wromg", Toast.LENGTH_SHORT).show();
+                loadingDialog.dismiss();
+            }
+        });
+
 
     }
 }

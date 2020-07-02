@@ -132,6 +132,7 @@
                 android:background="@drawable/bottomstroke" />
 
             <Button
+                android:id="@+id/btn_image_tugas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -153,14 +154,6 @@
                     android:buttonTint="@color/colorPrimary"
                     android:checked="true"
                     android:text="Via Online" />
-
-                <RadioButton
-                    android:id="@+id/tugas_alamat_radio_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:buttonTint="@color/colorPrimary"
-                    android:checked="false"
-                    android:text="Datang ke tempat" />
             </RadioGroup>
 
             <LinearLayout
@@ -322,7 +315,8 @@
                     android:text="1"
                     android:textAlignment="center"
                     android:textSize="18dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:id="@+id/personel_tugas"/>
             </LinearLayout>
 
             <Button

@@ -10,9 +10,15 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class ImageDeskripsiAdapter extends RecyclerView.Adapter<com.reynaldlancer.reynaldlancer.ImageDeskripsiAdapter.ViewHolder> {
+    public void setImageDeskripsiModel(ArrayList<ImageDeskripsiModel> imageDeskripsiModel) {
+        this.imageDeskripsiModel = imageDeskripsiModel;
+    }
+
     ArrayList<ImageDeskripsiModel> imageDeskripsiModel;
     Context context;
 
@@ -23,13 +29,11 @@ public class ImageDeskripsiAdapter extends RecyclerView.Adapter<com.reynaldlance
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        RelativeLayout foto;
-        ImageView cancel_logo;
+        ImageView foto;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             foto = itemView.findViewById(R.id.image_deskripsi_prev);
-            cancel_logo = itemView.findViewById(R.id.cancel_upload);
         }
     }
 
@@ -46,11 +50,7 @@ public class ImageDeskripsiAdapter extends RecyclerView.Adapter<com.reynaldlance
     public void onBindViewHolder(@NonNull com.reynaldlancer.reynaldlancer.ImageDeskripsiAdapter.ViewHolder holder, int position) {
 
         ImageDeskripsiModel model = imageDeskripsiModel.get(position);
-        if (model.image == R.mipmap.upload_icon){
-            holder.cancel_logo.setVisibility(View.GONE);
-        }
-        holder.foto.setBackgroundResource(model.image);
-
+        Glide.with(context).load(model.getImage_uri()).into(holder.foto);
     }
 
     @Override

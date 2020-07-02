@@ -1,114 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TopupDetailActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".TopupDetailActivity">
 
     <TextView
+        android:id="@+id/id_transaksi_add_saldo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
         android:background="@drawable/bottomstroke"
-        android:text="id TRX : lkdfnkonfob"/>
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:padding="12dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Transfer dengan nominal senilai"
-            android:textAlignment="center"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rp. 12.0000"
-            android:textStyle="bold"
-            android:textSize="24dp"
-            android:textAlignment="center"
-            android:id="@+id/nominal_view_detail"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="*Pastikan Nominal tepat hingga tiga nominal terakhir."
-            android:textSize="18dp"
-            android:layout_marginTop="12dp"
-            android:textStyle="italic"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pengiriman Dana Yang tidak sesuai nomnal akan ditolak"
-            android:textStyle="bold"/>
-
-        
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="3dp"
-        android:background="@color/colorGrey"
-        android:text="Transfer ke Rekening"
-        android:textAlignment="center"
-        android:layout_marginTop="12dp" />
-    
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@mipmap/bri"
-            android:layout_marginVertical="8dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="30dp"
-            />
-
-        <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginEnd="20dp"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PT. Reynaldi Berkah"
-                android:textStyle="bold"
-                android:textSize="18dp"
-                android:textAlignment="center"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="620 602 0192 001"
-                android:textStyle="normal"
-                android:textSize="18dp"
-                android:textAlignment="center"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="3dp"
-        android:text="Batas Waktu"
-        android:textAlignment="center"
-        android:background="@color/colorGrey" />
+        android:text="id TRX : lkdfnkonfob" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,28 +24,107 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Transfer dana sebelum"
-            android:textSize="18dp"/>
+            android:text="Transfer dengan nominal senilai"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/nominal_view_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp. 0"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="13 May 2020; 20:03"
-            android:textSize="22dp"
-            android:textStyle="bold"/>
+            android:layout_marginTop="12dp"
+            android:text="*Pastikan Nominal tepat hingga tiga nominal terakhir."
+            android:textSize="18dp"
+            android:textStyle="italic" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sistem akan otomatis membatalakan, jika transfer melewati batas waktu" />
+            android:text="Pengiriman Dana Yang tidak sesuai nomnal akan ditolak"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorGrey"
+        android:padding="3dp"
+        android:text="Transfer ke Rekening"
+        android:textAlignment="center" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="30dp"
+            android:src="@mipmap/bri" />
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PT. Reynaldi Berkah"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="620 602 0192 001"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrey"
+        android:padding="3dp"
+        android:text="Batalkan Transaksi"
+        android:textAlignment="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:text="Batalkan"
             android:layout_marginTop="12dp"
             android:background="@drawable/roundedorange"
-            android:textColor="@color/colorAccent" />
+            android:text="Batalkan"
+            android:textColor="@color/colorAccent"
+            android:id="@+id/batalkan_topup"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -148,18 +132,19 @@
             android:layout_marginTop="12dp"
             android:background="@color/colorGrey" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sudah Transfer ?"
-            android:textStyle="bold"
-            android:textSize="18dp"/>
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
@@ -167,17 +152,16 @@
             android:text="Lakukan konfirmasi dan upload lampiran bukti transfer" />
 
         <Button
+            android:id="@+id/konfirmasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="KONFIRMASI"
-            android:id="@+id/konfirmasi"
+            android:layout_marginTop="12dp"
             android:background="@drawable/roundedorange"
-            android:textSize="18dp"
+            android:text="KONFIRMASI"
             android:textColor="@color/colorAccent"
-            android:layout_marginTop="12dp" />
+            android:textSize="18dp" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

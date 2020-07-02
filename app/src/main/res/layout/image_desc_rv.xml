@@ -3,22 +3,14 @@
     android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <RelativeLayout
+    <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:background="@mipmap/tugas"
+        android:src="@mipmap/tugas"
         android:id="@+id/image_deskripsi_prev"
         android:layout_margin="12dp"
         >
-
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_cancel_black_24dp"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/cancel_upload"/>
-
-    </RelativeLayout>
+    </ImageView>
 
 
 </LinearLayout>

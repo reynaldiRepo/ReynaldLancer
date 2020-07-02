@@ -26,7 +26,7 @@
             android:id="@+id/konfirmasi_top_up_jumlah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Rp. 15.000"
+            android:text="Rp. 0"
             android:textSize="32dp"
             android:textStyle="bold" />
 
@@ -118,7 +118,8 @@
             android:background="@drawable/roundedorange"
             android:text="KONFIRMASI"
             android:textSize="20dp"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:id="@+id/konfirmasi_top_up"/>
     </LinearLayout>git
 
 </LinearLayout>

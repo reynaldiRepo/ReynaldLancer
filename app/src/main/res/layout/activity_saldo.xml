@@ -40,102 +40,13 @@
         android:background="@drawable/bottomstroke">
 
         <TextView
+            android:id="@+id/saldo_on_tambah_saldo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Dompet : Rp. 1.200.000"
+            android:text="Dompet : Rp. 0"
             android:textSize="20dp"
             android:gravity="center"/>
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:weightSum="100">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="50"
-            android:background="@drawable/bottomstroke"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Utama"
-                android:textAlignment="center"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rp. 1.200.000"
-                android:textAlignment="center"
-                android:textSize="18dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="50"
-            android:background="@drawable/bottomstroke"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Bonus"
-                android:textAlignment="center"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rp. 0"
-                android:textAlignment="center"
-                android:textSize="18dp" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bottomstroke"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
-                android:src="@drawable/coupon" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="12dp"
-                android:text="Punya Voucher atau Code Promo"
-                android:textSize="18dp" />
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginStart="8dp"
-                android:src="@drawable/right_icon" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

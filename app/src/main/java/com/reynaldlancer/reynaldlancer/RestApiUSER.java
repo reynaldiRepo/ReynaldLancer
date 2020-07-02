@@ -97,4 +97,45 @@ public interface RestApiUSER {
     @POST("user/del_pendidikan")
     Call<JsonObject> del_pendidikan(@Field("_id") String _id);
 
+    //for saldo
+    @FormUrlEncoded
+    @POST("user/create_transaksi")
+    Call<ModelTransaksiSaldo> create_transaksi(@Field("user_id") String user_id, @Field("jumlah") String jumlah,
+                                               @Field("status") String status, @Field("tanggal") String tanggal);
+
+    @GET("user/get_transaksi_all")
+    Call<ArrayList<ModelTransaksiSaldo>> get_transaksi_all(@Query("user_id") String user_id);
+
+    @GET("user/get_transaksi")
+    Call<ModelTransaksiSaldo> get_transaksi(@Query("_id") String _id);
+
+    @FormUrlEncoded
+    @POST("user/update_transaksi")
+    Call<JsonObject> update_transaksi(@Field("_id") String _id, @Field("status") String status);
+
+    @FormUrlEncoded
+    @POST("user/tambah_saldo")
+    Call<JsonObject> tambah_saldo(@Field("_id") String _id, @Field("jumlah") Integer Saldo);
+
+    @FormUrlEncoded
+    @POST("user/tarik_saldo")
+    Call<JsonObject> tarik_saldo(@Field("_id") String _id, @Field("jumlah") Integer Saldo);
+
+    @FormUrlEncoded
+    @POST("/user/buat_tugas")
+    Call<JsonObject> buat_tugas(@Field("user_id") String user_id,
+                                @Field("kategori") String kategori,
+                                @Field("judul") String judul,
+                                @Field("deskripsi") String deskripsi,
+                                @Field("image") String Image,
+                                @Field("mulai") String mulai,
+                                @Field("selesai") String selesai,
+                                @Field("upah") String upah);
+
+    @GET("user/get_tugas")
+    Call<ModelTugas> get_tugas(@Query("_id") String _id);
+
+    @GET("user/get_all_tugas")
+    Call<ArrayList<ModelTugas>> get_all_tugas();
+
 }

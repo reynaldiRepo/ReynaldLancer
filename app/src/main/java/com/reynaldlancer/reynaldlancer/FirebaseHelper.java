@@ -65,4 +65,27 @@ public class FirebaseHelper {
             Toast.makeText(ctx, "No File", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void uploadImageNoLoading(Uri filePath, String dir, String filename, Context ctx) {
+        if(filePath != null)
+        {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference storageReference = storage.getReference();
+            StorageReference path_to_firebase = storageReference.child(dir);
+            StorageReference path_for_upload = path_to_firebase.child(filename);
+            path_for_upload.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(ctx, "Success Upload", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(ctx, "Failed Upload"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }else{
+            Toast.makeText(ctx, "No File", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

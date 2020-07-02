@@ -6,19 +6,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import retrofit2.Callback;
+
 class RvHistoryAdapter extends RecyclerView.Adapter<RvHistoryAdapter.ViewHolder> {
-    ArrayList<HistoryModel> historyModels;
+    ArrayList<ModelTransaksiSaldo> historyModels;
     Context context;
 
-    public RvHistoryAdapter(ArrayList<HistoryModel> historyModels, Context context) {
+    public void setHistoryModels(ArrayList<ModelTransaksiSaldo> historyModels) {
+        this.historyModels = historyModels;
+    }
+
+    onDetaliTransaksiClick onDetaliTransaksiClick;
+
+
+    public RvHistoryAdapter(ArrayList<ModelTransaksiSaldo> historyModels, Context context, onDetaliTransaksiClick onDetaliTransaksiClick) {
         this.historyModels = historyModels;
         this.context = context;
+        this.onDetaliTransaksiClick = onDetaliTransaksiClick;
     }
 
 
@@ -40,7 +51,6 @@ class RvHistoryAdapter extends RecyclerView.Adapter<RvHistoryAdapter.ViewHolder>
     @NonNull
     @Override
     public RvHistoryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View v = LayoutInflater.from(context).inflate(R.layout.history_rv, parent, false);
         return new RvHistoryAdapter.ViewHolder(v);
     }
@@ -50,16 +60,17 @@ class RvHistoryAdapter extends RecyclerView.Adapter<RvHistoryAdapter.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull RvHistoryAdapter.ViewHolder holder, int position) {
 
-        HistoryModel history = historyModels.get(position);
-        holder.amount.setText(history.amount);
-        holder.date.setText(history.date);
-        holder.stautus.setText(history.status);
-
-        if (history.status == "Proccess"){
+        ModelTransaksiSaldo history = historyModels.get(position);
+        holder.stautus.setText(history.getStatus());
+        holder.amount.setText(new StringFormater().toCurrency(history.getJumlah().toString()));
+        holder.date.setText(history.getTanggal());
+//        Toast.makeText(context, history.getStatus(), Toast.LENGTH_SHORT).show();
+        if (history.getStatus().equals("PROSES")){
             holder.detail.setVisibility(View.VISIBLE);
+        }else{
+            holder.detail.setVisibility(View.GONE);
         }
-
-
+        holder.detail.setOnClickListener(v -> {onDetaliTransaksiClick.onItemTransaksiClick(history.get_id());});
     }
 
     @Override
